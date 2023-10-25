@@ -19,3 +19,7 @@ export const ComponentSeparator = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
 `;
+
+export const Clickable = styled.div`
+  cursor: pointer;
+`;
