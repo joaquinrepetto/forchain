@@ -1,23 +1,24 @@
 import React from "react";
-import { TitleH2, ComponentSeparator } from "../../components/Global/globalStyles";
 import {
-  UpcomingEventContainer,
-  EventDetail,
-  EventTitle,
-  EventInfo,
-} from "./upcomingEventsStyles";
+  ComponentSeparator,
+  TitleH2,
+} from "../../components/Global/globalStyles";
+import UpcomingEventsComponent from "../../components/UpcomingEvents/UpcomingEventsComponent";
+import { events } from "../../utils/data/upcoming/events";
 
 const UpcomingEvents = () => {
   return (
     <ComponentSeparator>
       <TitleH2>Próximos eventos</TitleH2>
-      <UpcomingEventContainer>
-        <div>Event Icon</div>
-        <EventDetail>
-          <EventTitle>GrowthHackers Conference</EventTitle>
-          <EventInfo>Online | Mié 08 Nov 2023 | 09 hs</EventInfo>
-        </EventDetail>
-      </UpcomingEventContainer>
+      {events.map((event, index) => (
+        <UpcomingEventsComponent
+          key={index}
+          eventName={event.name}
+          eventDescription={event.description}
+          eventFlyerUrl={event.flyer}
+          eventPictureUrl={event.picture}
+        />
+      ))}
     </ComponentSeparator>
   );
 };

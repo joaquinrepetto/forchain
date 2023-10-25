@@ -14,10 +14,10 @@ code {
 
 @font-face {
   font-family: "Codec Pro";
-  src: url("/src/fonts/CodecPro.ttf");
+  src: url("/src/assets/fonts/CodecPro.ttf");
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/src/fonts/Poppins-Medium.ttf");
+  src: url("/src/assets/fonts/Poppins-Medium.ttf");
 }
