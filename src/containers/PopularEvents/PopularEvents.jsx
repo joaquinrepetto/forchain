@@ -17,9 +17,9 @@ const PopularEvents = () => {
     <ComponentSeparator>
       <TitleH2>Eventos populares</TitleH2>
       <PopularEventsContainer>
-        {events?.map((event) => (
-          <EventContainer>
-            <EventImageContainer key={event.id}>
+        {events?.map((event, index) => (
+          <EventContainer key={index}>
+            <EventImageContainer>
               <EventImage src={event.image} />
             </EventImageContainer>
             <EventName>{event.name}</EventName>

@@ -16,6 +16,7 @@ export const PopularEventsContainer = styled.div`
   margin-right: -20px;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
 `;
 
 export const EventImageContainer = styled.div`
