@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../../components/Globals/globalsStyles";
+import { Container } from "../../components/Global/globalStyles";
 
 const Layout = ({ children }) => {
   return <Container>{children}</Container>;
