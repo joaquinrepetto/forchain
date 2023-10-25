@@ -1,22 +1,32 @@
 import React from "react";
 import {
   PopularEventsContainer,
-  Event,
+  EventImageContainer,
   EventImage,
+  EventName,
+  EventContainer,
 } from "./popularEventsStyles";
-import { TitleH2 } from "../../components/Globals/globalsStyles";
+import {
+  TitleH2,
+  ComponentSeparator,
+} from "../../components/Global/globalStyles";
+import { events } from "../../utils/data/events/events";
 
 const PopularEvents = () => {
   return (
-    <>
+    <ComponentSeparator>
       <TitleH2>Eventos populares</TitleH2>
       <PopularEventsContainer>
-        <Event>
-          <EventImage src="path_to_image.jpg" alt="Event" />
-          <span>Event name</span>
-        </Event>
+        {events?.map((event) => (
+          <EventContainer>
+            <EventImageContainer key={event.id}>
+              <EventImage src={event.image} />
+            </EventImageContainer>
+            <EventName>{event.name}</EventName>
+          </EventContainer>
+        ))}
       </PopularEventsContainer>
-    </>
+    </ComponentSeparator>
   );
 };
 
