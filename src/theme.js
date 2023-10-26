@@ -11,6 +11,7 @@ const theme = {
     softLilac: "#B2ABF5",
     modalBackground: "#121440",
     minusColor: "#838181",
+    purpleButton: "#201A39", 
   },
 };
 

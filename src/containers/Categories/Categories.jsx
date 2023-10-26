@@ -4,15 +4,18 @@ import {
   ComponentSeparator,
 } from "../../components/Global/globalStyles";
 import { CategoriesContainer, CategoryButton } from "./categoriesStyles";
+import { categories } from "../../utils/data/categories/categories";
 
 const Categories = () => {
   return (
     <ComponentSeparator>
       <TitleH2>Categorias</TitleH2>
       <CategoriesContainer>
-        <CategoryButton>Educación</CategoryButton>
-        <CategoryButton>Networking</CategoryButton>
-        <CategoryButton>DAOS</CategoryButton>
+        {categories?.map((category, index) => (
+          <CategoryButton key={index} active={index === 0}>
+            {category}
+          </CategoryButton>
+        ))}
       </CategoriesContainer>
     </ComponentSeparator>
   );
