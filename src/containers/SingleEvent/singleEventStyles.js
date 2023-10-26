@@ -314,7 +314,8 @@ export const TicketCounter = styled.div`
   border: 1px solid ${theme.colors.purpleBorder};
   border-radius: 10px;
   padding: 20px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const Button = styled.button`
@@ -340,7 +341,10 @@ export const GeneralTicket = styled.h3`
   font-size: 17px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  white-space: nowrap;
 `;
+
+export const GeneralTicketContainer = styled.div``;
 
 export const CountSpan = styled.span`
   margin-top: 0;
@@ -383,4 +387,74 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 15px;
+`;
+
+export const ModalFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  background-color: ${theme.colors.darkBlue};
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+  margin-right: -20px;
+  top: 0;
+  overflow: auto;
+`;
+
+export const ContainerLogoAndClose = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+export const ContainerLogo = styled.div`
+  width: 138px;
+  height: 25px;
+`;
+
+export const Logo = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 0.5px solid ${theme.colors.titleText};
+  width: 100%;
+  margin-bottom: 40px;
+`;
+
+export const TitleForm = styled.h2`
+  font-size: 20px;
+  color: ${theme.colors.titleText};
+  font-family: "Codec Pro", sans-serif;
+  font-weight: 400;
+  margin-bottom: 10px;
+`;
+
+export const SubtitleForm = styled.p`
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  color: ${theme.colors.titleText};
+  margin-top: 0px;
+`;
+
+export const ContainerForm = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 `;
