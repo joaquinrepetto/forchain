@@ -145,8 +145,8 @@ export const SectionTitle = styled.h2`
   font-size: 18px;
   color: ${theme.colors.titleText};
   font-family: "Codec Pro", sans-serif;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
 
 export const AgendaContainer = styled.div`
@@ -235,4 +235,152 @@ export const ButtonAgenda = styled.button`
   font-family: "Poppins", sans-serif;
   border-radius: 15px;
   padding: 10px 20px;
+`;
+
+export const SpeakersUl = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+export const SpeakerLi = styled.li`
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+`;
+
+export const SpeakerIcon = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
+export const SponsorPictureContainer = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+`;
+
+export const SponsorPicture = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid ${theme.colors.purpleBorder};
+`;
+
+export const SponsorsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 30px;
+`;
+
+export const TagContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 250px;
+`;
+
+export const TagSpan = styled.span`
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.darkBlue};
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-align: center;
+`;
+
+export const ModalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${theme.colors.modalBackground};
+  width: calc(100% - 40px);
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+`;
+
+export const TicketCounter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border: 1px solid ${theme.colors.purpleBorder};
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+`;
+
+export const Button = styled.button`
+  background-color: ${theme.colors.purpleBorder};
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 17px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+`;
+
+export const TicketButtonsContainer = styled.div`
+  display: flex;
+  gap: 50px;
+`;
+
+export const GeneralTicket = styled.h3`
+  margin-top: 0;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+`;
+
+export const CountSpan = styled.span`
+  margin-top: 0;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+`;
+
+export const MinusButton = styled.button`
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.minusColor};
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+`;
+
+export const PlusButton = styled.button`
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${theme.colors.purpleBorder};
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 `;

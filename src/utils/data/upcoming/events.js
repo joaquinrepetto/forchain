@@ -21,6 +21,71 @@ export const events = [
     speakerPosition: "Head of Growth @GrowthHackers",
     agendaItemDescription:
       " A growth operation can be in different maturity stage, from a task and revenue-driven attitude, up to a data",
+    speakers: [
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+    ],
+    sponsors: [
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+    ],
+    tags: [
+      "#Educación",
+      "#Blockchain",
+      "#DeSci",
+      "#Ecosistema",
+      "#Innvoación",
+      "#Online",
+      "#Conferencia",
+    ],
   },
   {
     id: 2,
@@ -43,6 +108,71 @@ export const events = [
     speakerPosition: "Head of Growth @GrowthHackers",
     agendaItemDescription:
       " A growth operation can be in different maturity stage, from a task and revenue-driven attitude, up to a data",
+    speakers: [
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @GrowthHackers",
+      },
+    ],
+    sponsors: [
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+    ],
+    tags: [
+      "#Educación",
+      "#Blockchain",
+      "#DeSci",
+      "#Ecosistema",
+      "#Innvoación",
+      "#Online",
+      "#Conferencia",
+    ],
   },
   {
     id: 3,
@@ -65,5 +195,70 @@ export const events = [
     speakerPosition: "Head of Growth @GrowthHackers",
     agendaItemDescription:
       " A growth operation can be in different maturity stage, from a task and revenue-driven attitude, up to a data",
+    speakers: [
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @ GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @ GrowthHackers",
+      },
+      {
+        name: "Pedro Clivati",
+        position: "Head of Growth @ GrowthHackers",
+      },
+    ],
+    sponsors: [
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+      {
+        picture:
+          "https://pbs.twimg.com/profile_images/1411046230554198018/QCAGPfjz_400x400.png",
+      },
+    ],
+    tags: [
+      "#Educación",
+      "#Blockchain",
+      "#DeSci",
+      "#Ecosistema",
+      "#Innvoación",
+      "#Online",
+      "#Conferencia",
+    ],
   },
 ];

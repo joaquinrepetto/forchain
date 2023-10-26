@@ -9,6 +9,8 @@ const theme = {
     white: "#ffffff",
     border: "#707070",
     softLilac: "#B2ABF5",
+    modalBackground: "#121440",
+    minusColor: "#838181",
   },
 };
 

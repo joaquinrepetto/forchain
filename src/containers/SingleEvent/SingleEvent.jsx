@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { events } from "../../utils/data/upcoming/events";
 import { ComponentSeparator } from "../../components/Global/globalStyles";
@@ -6,10 +6,15 @@ import SingleEventHeader from "../../components/SingleEvent/SingleEventHeader";
 import SingleEventInfo from "../../components/SingleEvent/SingleEventInfo";
 import SingleEventAbout from "../../components/SingleEvent/SingleEventAbout";
 import Agenda from "../../components/SingleEvent/Agenda";
+import Speakers from "../../components/SingleEvent/Speakers";
+import Sponsors from "../../components/SingleEvent/Sponsors";
+import Tags from "../../components/SingleEvent/Tags";
+import TicketSelectionModal from "../../components/SingleEvent/TicketSelectionModal";
 
 const SingleEvent = () => {
   const { id } = useParams();
   const event = events.find((event) => event.id === Number(id));
+  const [ticketsCount, setTicketsCount] = useState(1);
 
   return (
     <>
@@ -40,6 +45,21 @@ const SingleEvent = () => {
           agendaItemDescription={event?.agendaItemDescription}
         />
       </ComponentSeparator>
+      <ComponentSeparator>
+        <Speakers speakers={event?.speakers} />
+      </ComponentSeparator>
+      <ComponentSeparator>
+        <Sponsors sponsors={event?.sponsors} />
+      </ComponentSeparator>
+      <ComponentSeparator>
+        <Tags tags={event?.tags} />
+      </ComponentSeparator>
+      <TicketSelectionModal
+        onClose={() => {}}
+        onGetTickets={() => {}}
+        ticketsCount={ticketsCount}
+        setTicketsCount={setTicketsCount}
+      />
     </>
   );
 };
