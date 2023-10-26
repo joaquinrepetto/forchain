@@ -1,22 +1,28 @@
 import React from "react";
-import {
-  LoginWindowContainer,
-  WindowContainer,
-  CloseWindowButton,
-  Logo,
-} from "./headerStyles";
+import { LoginWindowContainer, WindowContainer, Logo } from "./headerStyles";
 import forchainLogo from "../../../assets/imgs/forchain-blanco-logo.png";
-import menuIcon from "../../../assets/imgs/menu-header.png";
-import { TitleH2 } from "../../../components/Global/globalStyles.js";
 
 const LoginWindow = ({ user, setUser, setShowLogin }) => {
   return (
     <LoginWindowContainer>
       <WindowContainer>
         <button onClick={() => setShowLogin(false)}>X</button>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Logo src={forchainLogo} />
-          <button onClick={() => setUser(true)}>Login</button>
+          <button
+            onClick={() => {
+              setUser(true);
+              setShowLogin(false);
+            }}
+          >
+            Login
+          </button>
         </div>
       </WindowContainer>
     </LoginWindowContainer>

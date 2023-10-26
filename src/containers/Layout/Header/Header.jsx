@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { HeaderStyled, Logo, Menu } from "./headerStyles";
-import forchainLogo from "../../../assets/imgs/forchain-blanco-logo.png";
-import menuIcon from "../../../assets/imgs/menu-header.png";
+import { HeaderStyled, Logo, Menu, ProfileIconImg } from "./headerStyles";
 import { TitleH2 } from "../../../components/Global/globalStyles.js";
 import LoginWindow from "./LoginWindow";
+import forchainLogo from "../../../assets/imgs/forchain-blanco-logo.png";
+import menuIcon from "../../../assets/imgs/menu-header.png";
+import profileIcon from "../../../assets/imgs/Wallet-icon.png";
 
 const Header = ({ user, setUser }) => {
   const [showLogin, setShowLogin] = useState(false);
@@ -11,7 +12,7 @@ const Header = ({ user, setUser }) => {
     <HeaderStyled>
       <Logo src={forchainLogo} />
       {user ? (
-        <Menu src={menuIcon} />
+        <ProfileIconImg src={profileIcon} />
       ) : (
         <TitleH2
           style={{ fontSize: "14px", paddingTop: "10px" }}

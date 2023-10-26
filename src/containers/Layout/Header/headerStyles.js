@@ -17,16 +17,23 @@ export const Menu = styled.img`
   width: 22.53px;
   height: 12px;
 `;
+export const ProfileIconImg = styled.img`
+  object-fit: cover;
+  width: 38.54;
+  height: 38.54px;
+`;
 
 export const LoginWindowContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: gray;
   z-index: 3;
-  position: absolute;
+  position: fixed;
+  top: 0%;
+  left: 0%;
 `;
 
 export const WindowContainer = styled.div`
-  width: 606px;
-  height: 352px;
+  width: 100vw;
+  height: 100vh;
 `;

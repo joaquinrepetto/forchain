@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import SearchWindow from "./SearchWindow";
 import {
   TabsContainer,
   Tab,
@@ -15,6 +16,19 @@ import userIcon from "../../../assets/imgs/user-icon-white.png";
 
 const Footer = () => {
   const [hovered, setHovered] = useState(false);
+  const [searchWindowOpen, setSearchWindowOpen] = useState(false);
+
+  useEffect(() => {
+    if (searchWindowOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [searchWindowOpen]);
+
   return (
     <FooterContainer>
       <ButtonPlusContainer>
@@ -29,10 +43,13 @@ const Footer = () => {
         <Tab>
           <IconsContainer>
             <Icon src={homeIcon} />
-            <Icon src={searchIcon} />
+            <Icon src={searchIcon} onClick={() => setSearchWindowOpen(true)} />
             <Icon src={ticketIcon} />
             <Icon src={userIcon} />
           </IconsContainer>
+          {searchWindowOpen ? (
+            <SearchWindow setSearchWindowOpen={setSearchWindowOpen} />
+          ) : null}
         </Tab>
       </TabsContainer>
     </FooterContainer>
