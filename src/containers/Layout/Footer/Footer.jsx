@@ -32,8 +32,12 @@ const Footer = () => {
     };
   }, [searchWindowOpen]);
 
-  const handlerHome = () => {
+  const handlerHomeNavigate = () => {
     handleRedirect(navigate, `/`);
+  };
+
+  const handlerTicketsNavigate = () => {
+    handleRedirect(navigate, `/tickets`);
   };
 
   return (
@@ -49,9 +53,9 @@ const Footer = () => {
       <TabsContainer>
         <Tab>
           <IconsContainer>
-            <Icon src={homeIcon} onClick={handlerHome} />
+            <Icon src={homeIcon} onClick={handlerHomeNavigate} />
             <Icon src={searchIcon} onClick={() => setSearchWindowOpen(true)} />
-            <Icon src={ticketIcon} />
+            <Icon src={ticketIcon} onClick={handlerTicketsNavigate} />
             <Icon src={userIcon} />
           </IconsContainer>
           {searchWindowOpen ? (

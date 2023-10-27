@@ -6,8 +6,11 @@ import LoginWindow from "./LoginWindow";
 import forchainLogo from "../../../assets/imgs/forchain-blanco-logo.png";
 import menuIcon from "../../../assets/imgs/menu-header.png";
 import profileIcon from "../../../assets/imgs/Wallet-icon.png";
+import { handleRedirect } from "../../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ user, setUser }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [showLogin, setShowLogin] = useState(false);
   const [isPathEvent, setIsPathEvent] = useState(false);
@@ -20,9 +23,13 @@ const Header = ({ user, setUser }) => {
     }
   }, [location]);
 
+  const handlerHome = () => {
+    handleRedirect(navigate, `/`);
+  };
+
   return (
     <HeaderStyled>
-      <Logo src={forchainLogo} />
+      <Logo src={forchainLogo} onClick={handlerHome} />
       {user && isPathEvent ? (
         <div>
           <ProfileIconImg src={profileIcon} />
