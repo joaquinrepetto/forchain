@@ -16,14 +16,19 @@ const SingleEvent = () => {
   const event = events.find((event) => event.id === Number(id));
   const [ticketsCount, setTicketsCount] = useState(1);
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isTicketConfirmationOpen, setIsTicketConfirmationOpen] =
+    useState(false);
 
   const handleGetTickets = () => {
     setIsFormOpen(true);
-    console.log("Tickets count: ", ticketsCount);
   };
 
   const handleCloseForm = () => {
     setIsFormOpen(false);
+  };
+
+  const handleTicketConfirmation = () => {
+    setIsTicketConfirmationOpen(true);
   };
 
   useEffect(() => {
@@ -82,6 +87,9 @@ const SingleEvent = () => {
         setTicketsCount={setTicketsCount}
         isFormOpen={isFormOpen}
         handleCloseForm={handleCloseForm}
+        isTicketConfirmationOpen={isTicketConfirmationOpen}
+        handleTicketConfirmation={handleTicketConfirmation}
+        event={event}
       />
     </>
   );

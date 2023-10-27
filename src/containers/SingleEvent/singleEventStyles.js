@@ -458,3 +458,14 @@ export const ContainerForm = styled.form`
   flex-direction: column;
   gap: 20px;
 `;
+
+export const CloseIconContainer = styled.div`
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+`;
+
+export const CloseIcon = styled.img`
+  width: 100%;
+  height: 100%;
+`;
