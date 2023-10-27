@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { events } from "../../utils/data/upcoming/events";
 import { ComponentSeparator } from "../../components/Global/globalStyles";
@@ -10,11 +10,47 @@ import Speakers from "../../components/SingleEvent/Speakers";
 import Sponsors from "../../components/SingleEvent/Sponsors";
 import Tags from "../../components/SingleEvent/Tags";
 import TicketSelectionModal from "../../components/SingleEvent/TicketSelectionModal";
+import { handleRedirect } from "../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const SingleEvent = () => {
   const { id } = useParams();
   const event = events.find((event) => event.id === Number(id));
   const [ticketsCount, setTicketsCount] = useState(1);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isTicketConfirmationOpen, setIsTicketConfirmationOpen] =
+    useState(false);
+
+  const navigate = useNavigate();
+
+  const handleGetTickets = () => {
+    setIsFormOpen(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormOpen(false);
+    setIsTicketConfirmationOpen(false);
+  };
+
+  const handleTicketConfirmation = () => {
+    setIsTicketConfirmationOpen(true);
+  };
+
+  const handleNavigate = () => {
+    handleRedirect(navigate, "/entradas");
+  };
+
+  useEffect(() => {
+    if (isFormOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isFormOpen]);
 
   return (
     <>
@@ -55,10 +91,15 @@ const SingleEvent = () => {
         <Tags tags={event?.tags} />
       </ComponentSeparator>
       <TicketSelectionModal
-        onClose={() => {}}
-        onGetTickets={() => {}}
+        handleGetTickets={handleGetTickets}
         ticketsCount={ticketsCount}
         setTicketsCount={setTicketsCount}
+        isFormOpen={isFormOpen}
+        handleCloseForm={handleCloseForm}
+        isTicketConfirmationOpen={isTicketConfirmationOpen}
+        handleTicketConfirmation={handleTicketConfirmation}
+        event={event}
+        handleNavigate={handleNavigate}
       />
     </>
   );

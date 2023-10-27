@@ -9,37 +9,58 @@ import {
   PlusButton,
   ButtonsContainer,
   CountSpan,
+  GeneralTicketContainer,
 } from "../../containers/SingleEvent/singleEventStyles";
+import CompleteOrderForm from "../../containers/SingleEvent/CompleteOrderForm";
 
 const TicketSelectionModal = ({
-  onGetTickets,
+  handleGetTickets,
+  handleCloseForm,
   ticketsCount,
   setTicketsCount,
+  isFormOpen,
+  isTicketConfirmationOpen,
+  handleTicketConfirmation,
+  event,
+  handleNavigate
 }) => {
   return (
-    <ModalWrapper>
-      <TicketCounter>
-        <TicketButtonsContainer>
-          <div>
-            <GeneralTicket>Entrada general</GeneralTicket>
-            <GeneralTicket>Gratis</GeneralTicket>
-          </div>
-          <ButtonsContainer>
-            <MinusButton
-              onClick={() => setTicketsCount((prev) => Math.max(1, prev - 1))}
-            >
-              -
-            </MinusButton>
-            <CountSpan>{ticketsCount}</CountSpan>
-            <PlusButton onClick={() => setTicketsCount((prev) => prev + 1)}>
-              +
-            </PlusButton>
-          </ButtonsContainer>
-        </TicketButtonsContainer>
-      </TicketCounter>
+    <>
+      {isFormOpen && (
+        <CompleteOrderForm
+          handleCloseForm={handleCloseForm}
+          setTicketsCount={setTicketsCount}
+          ticketsCount={ticketsCount}
+          isTicketConfirmationOpen={isTicketConfirmationOpen}
+          handleTicketConfirmation={handleTicketConfirmation}
+          event={event}
+          handleNavigate={handleNavigate}
+        />
+      )}
+      <ModalWrapper>
+        <TicketCounter>
+          <TicketButtonsContainer>
+            <GeneralTicketContainer>
+              <GeneralTicket>Entrada general</GeneralTicket>
+              <GeneralTicket>Gratis</GeneralTicket>
+            </GeneralTicketContainer>
+            <ButtonsContainer>
+              <MinusButton
+                onClick={() => setTicketsCount((prev) => Math.max(1, prev - 1))}
+              >
+                -
+              </MinusButton>
+              <CountSpan>{ticketsCount}</CountSpan>
+              <PlusButton onClick={() => setTicketsCount((prev) => prev + 1)}>
+                +
+              </PlusButton>
+            </ButtonsContainer>
+          </TicketButtonsContainer>
+        </TicketCounter>
 
-      <Button onClick={onGetTickets}>Obtener tickets</Button>
-    </ModalWrapper>
+        <Button onClick={() => handleGetTickets()}>Obtener tickets</Button>
+      </ModalWrapper>
+    </>
   );
 };
 
