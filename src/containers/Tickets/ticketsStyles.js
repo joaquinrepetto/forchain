@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const TicketsContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const TitleTicketsContainer = styled.div`
   align-items: center;
 `;
 export const TitleTickets = styled.body`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 20px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
@@ -24,85 +25,70 @@ export const TitleTickets = styled.body`
 export const TicketsBodyLogged = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const TicketTypesContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const TicketTypes = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const EventsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const TitleContainerEvents = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const Event = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 export const NextWeekEventsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 25px;
-
   width: calc(100vw - 40px);
 `;
 
 export const TicketsBodyUnlogged = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   margin-top: 80px;
@@ -111,7 +97,7 @@ export const TicketsBodyUnlogged = styled.div`
 export const SubtitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border-left: solid 3px #695ddf;
+  border-left: solid 3px ${theme.colors.purpleBorder};
   justify-content: center;
   align-items: center;
   height: 46px;
@@ -119,7 +105,7 @@ export const SubtitleContainer = styled.div`
   padding-bottom: 3.5px;
 `;
 export const SubTitle = styled.body`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 22px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
@@ -127,21 +113,18 @@ export const SubTitle = styled.body`
 `;
 export const ButtonLoginContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: red;
-  width: 350px;
-  heigth: 54px;
 `;
 export const ButtonLogin = styled.button`
-  color: #ffffff;
-  font-size: 21px;
-  font-family: "Codec Pro", sans-serif;
-  font-weight: 400;
-  background-color: #695ddf;
-  width: 350px;
-  heigth: 54px;
+  background-color: ${theme.colors.purpleBorder};
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 17px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
 `;
 export const ThisWeekEventsContainer = styled.div`
   display: flex;
@@ -157,14 +140,14 @@ export const ThisWeekEventsContainer = styled.div`
 `;
 
 export const TitleWeekEvents = styled.body`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
 `;
 
 export const ButtonTicketTypes = styled.button`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;

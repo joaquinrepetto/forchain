@@ -37,7 +37,7 @@ const SingleEvent = () => {
   };
 
   const handleNavigate = () => {
-    handleRedirect(navigate, "/entradas");
+    handleRedirect(navigate, "/tickets");
   };
 
   useEffect(() => {

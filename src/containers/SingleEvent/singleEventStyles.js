@@ -304,6 +304,7 @@ export const ModalWrapper = styled.div`
   padding: 20px;
   margin-left: -20px;
   margin-right: -20px;
+  z-index: 999;
 `;
 
 export const TicketCounter = styled.div`

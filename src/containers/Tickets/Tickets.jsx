@@ -61,7 +61,7 @@ const Tickets = ({ user }) => {
       ) : (
         <TicketsBodyUnlogged>
           <SubtitleContainer>
-            <SubTitle>Necesitar inciar sesión para ver tus tickets</SubTitle>
+            <SubTitle>Necesitas inciar sesión para ver tus tickets</SubTitle>
           </SubtitleContainer>
           <ButtonLoginContainer>
             <ButtonLogin>Iniciar sesión</ButtonLogin>
