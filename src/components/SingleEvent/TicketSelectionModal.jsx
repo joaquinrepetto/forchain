@@ -19,6 +19,10 @@ const TicketSelectionModal = ({
   ticketsCount,
   setTicketsCount,
   isFormOpen,
+  isTicketConfirmationOpen,
+  handleTicketConfirmation,
+  event,
+  handleNavigate
 }) => {
   return (
     <>
@@ -27,6 +31,10 @@ const TicketSelectionModal = ({
           handleCloseForm={handleCloseForm}
           setTicketsCount={setTicketsCount}
           ticketsCount={ticketsCount}
+          isTicketConfirmationOpen={isTicketConfirmationOpen}
+          handleTicketConfirmation={handleTicketConfirmation}
+          event={event}
+          handleNavigate={handleNavigate}
         />
       )}
       <ModalWrapper>

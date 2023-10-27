@@ -10,20 +10,34 @@ import Speakers from "../../components/SingleEvent/Speakers";
 import Sponsors from "../../components/SingleEvent/Sponsors";
 import Tags from "../../components/SingleEvent/Tags";
 import TicketSelectionModal from "../../components/SingleEvent/TicketSelectionModal";
+import { handleRedirect } from "../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const SingleEvent = () => {
   const { id } = useParams();
   const event = events.find((event) => event.id === Number(id));
   const [ticketsCount, setTicketsCount] = useState(1);
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isTicketConfirmationOpen, setIsTicketConfirmationOpen] =
+    useState(false);
+
+  const navigate = useNavigate();
 
   const handleGetTickets = () => {
     setIsFormOpen(true);
-    console.log("Tickets count: ", ticketsCount);
   };
 
   const handleCloseForm = () => {
     setIsFormOpen(false);
+    setIsTicketConfirmationOpen(false);
+  };
+
+  const handleTicketConfirmation = () => {
+    setIsTicketConfirmationOpen(true);
+  };
+
+  const handleNavigate = () => {
+    handleRedirect(navigate, "/entradas");
   };
 
   useEffect(() => {
@@ -82,6 +96,10 @@ const SingleEvent = () => {
         setTicketsCount={setTicketsCount}
         isFormOpen={isFormOpen}
         handleCloseForm={handleCloseForm}
+        isTicketConfirmationOpen={isTicketConfirmationOpen}
+        handleTicketConfirmation={handleTicketConfirmation}
+        event={event}
+        handleNavigate={handleNavigate}
       />
     </>
   );
