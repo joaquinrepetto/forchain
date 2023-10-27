@@ -17,6 +17,7 @@ const SuccessMessage = ({
   indication,
   buttonText,
   acknowledgments,
+  onClick,
 }) => {
   return (
     <SuccessContainer>
@@ -26,7 +27,13 @@ const SuccessMessage = ({
       </SuccessTextContainer>
       <ContainerBottomText>
         <SuccessIndication>{indication}</SuccessIndication>
-        <SuccessButton>{buttonText}</SuccessButton>
+        <SuccessButton
+          onClick={() => {
+            onClick();
+          }}
+        >
+          {buttonText}
+        </SuccessButton>
         <ContainerAcknowledgments>
           <AcknowledgmentsText>{acknowledgments}</AcknowledgmentsText>
         </ContainerAcknowledgments>

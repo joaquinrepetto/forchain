@@ -33,6 +33,7 @@ const CompleteOrderForm = ({
   isTicketConfirmationOpen,
   handleTicketConfirmation,
   event,
+  handleNavigate,
 }) => {
   return (
     <ModalFormContainer>
@@ -50,7 +51,7 @@ const CompleteOrderForm = ({
           </CloseIconContainer>
         </ContainerLogoAndClose>
         {isTicketConfirmationOpen ? (
-          <TicketConfirmation event={event} />
+          <TicketConfirmation event={event} handleNavigate={handleNavigate} />
         ) : (
           <>
             <TitleContainer>
