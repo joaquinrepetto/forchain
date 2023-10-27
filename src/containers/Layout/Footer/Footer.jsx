@@ -13,8 +13,11 @@ import homeIcon from "../../../assets/imgs/home-icon-white.png";
 import searchIcon from "../../../assets/imgs/search-icon-white.png";
 import ticketIcon from "../../../assets/imgs/ticket-icon-white.png";
 import userIcon from "../../../assets/imgs/user-icon-white.png";
+import { handleRedirect } from "../../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
   const [searchWindowOpen, setSearchWindowOpen] = useState(false);
 
@@ -29,6 +32,10 @@ const Footer = () => {
     };
   }, [searchWindowOpen]);
 
+  const handlerHome = () => {
+    handleRedirect(navigate, `/`);
+  };
+
   return (
     <FooterContainer>
       <ButtonPlusContainer>
@@ -42,7 +49,7 @@ const Footer = () => {
       <TabsContainer>
         <Tab>
           <IconsContainer>
-            <Icon src={homeIcon} />
+            <Icon src={homeIcon} onClick={handlerHome} />
             <Icon src={searchIcon} onClick={() => setSearchWindowOpen(true)} />
             <Icon src={ticketIcon} />
             <Icon src={userIcon} />
