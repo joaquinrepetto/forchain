@@ -23,3 +23,15 @@ export const ComponentSeparator = styled.div`
 export const Clickable = styled.div`
   cursor: pointer;
 `;
+
+export const PurpleButton = styled.button`
+  background-color: #695ddf;
+  border: none;
+  width: 360px;
+  height: 54px;
+  padding: 12px 106px;
+  border-radius: 17px;
+  font-family: "Codec Pro", sans-serif;
+  color: white;
+  font-size: 21px;
+`;
