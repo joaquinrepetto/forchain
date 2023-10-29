@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   TicketsContainer,
   TitleTicketsContainer,
@@ -6,22 +7,23 @@ import {
   TicketTypesContainer,
   TicketTypes,
   ButtonTicketTypes,
-  EventsContainer,
-  ThisWeekEventsContainer,
-  TitleContainerEvents,
-  TitleWeekEvents,
-  Event,
-  NextWeekEventsContainer,
   TicketsBodyUnlogged,
   SubtitleContainer,
   SubTitle,
   ButtonLoginContainer,
   ButtonLogin,
 } from "./ticketsStyles";
+import {
+  thisWeekEvents,
+  nextWeekEvents,
+  pastEvents
+} from "../../utils/data/tickets/tickets";
+import Events from "../../components/Tickets/Events";
+import PastEvents from "../../components/Tickets/PastEvents";
 
 const Tickets = ({ user }) => {
-  const thisWeekEvents = [];
-  const nextWeekEvents = [];
+  const [activeTab, setActiveTab] = useState("Próximos");
+
   return (
     <TicketsContainer>
       <TitleTicketsContainer>
@@ -31,37 +33,35 @@ const Tickets = ({ user }) => {
         <TicketsBodyLogged>
           <TicketTypesContainer>
             <TicketTypes>
-              <ButtonTicketTypes>Próximos</ButtonTicketTypes>
-              <ButtonTicketTypes>Pasados</ButtonTicketTypes>
+              <ButtonTicketTypes
+                isActive={activeTab === "Próximos"}
+                onClick={() => setActiveTab("Próximos")}
+              >
+                Próximos
+              </ButtonTicketTypes>
+              <ButtonTicketTypes
+                isActive={activeTab === "Pasados"}
+                onClick={() => setActiveTab("Pasados")}
+              >
+                Pasados
+              </ButtonTicketTypes>
             </TicketTypes>
           </TicketTypesContainer>
-          <EventsContainer>
-            <ThisWeekEventsContainer>
-              <TitleContainerEvents>
-                <TitleWeekEvents>Esta semana</TitleWeekEvents>
-              </TitleContainerEvents>
-              <EventsContainer>
-                {thisWeekEvents.map((event) => {
-                  return <Event></Event>;
-                })}
-              </EventsContainer>
-            </ThisWeekEventsContainer>
-            <NextWeekEventsContainer>
-              <TitleContainerEvents>
-                <TitleWeekEvents>Proximas semana</TitleWeekEvents>
-              </TitleContainerEvents>
-              <EventsContainer>
-                {nextWeekEvents.map((event) => {
-                  return <Event></Event>;
-                })}
-              </EventsContainer>
-            </NextWeekEventsContainer>
-          </EventsContainer>
+          {activeTab === "Próximos" ? (
+            <Events
+              thisWeekEvents={thisWeekEvents}
+              nextWeekEvents={nextWeekEvents}
+            />
+          ) : (
+            <PastEvents 
+              pastEvents={pastEvents}
+            />
+          )}
         </TicketsBodyLogged>
       ) : (
         <TicketsBodyUnlogged>
           <SubtitleContainer>
-            <SubTitle>Necesitar inciar sesión para ver tus tickets</SubTitle>
+            <SubTitle>Necesitas inciar sesión para ver tus tickets</SubTitle>
           </SubtitleContainer>
           <ButtonLoginContainer>
             <ButtonLogin>Iniciar sesión</ButtonLogin>
