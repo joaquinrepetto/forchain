@@ -16,13 +16,20 @@ import {
 import {
   thisWeekEvents,
   nextWeekEvents,
-  pastEvents
+  pastEvents,
 } from "../../utils/data/tickets/tickets";
 import Events from "../../components/Tickets/Events";
 import PastEvents from "../../components/Tickets/PastEvents";
+import { handleRedirect } from "../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const Tickets = ({ user }) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Próximos");
+
+  const handleClickEventNavigate = (event) => {
+    handleRedirect(navigate, `/tickets/${event.id}`);
+  };
 
   return (
     <TicketsContainer>
@@ -51,11 +58,10 @@ const Tickets = ({ user }) => {
             <Events
               thisWeekEvents={thisWeekEvents}
               nextWeekEvents={nextWeekEvents}
+              handleClickEventNavigate={handleClickEventNavigate}
             />
           ) : (
-            <PastEvents 
-              pastEvents={pastEvents}
-            />
+            <PastEvents pastEvents={pastEvents} />
           )}
         </TicketsBodyLogged>
       ) : (

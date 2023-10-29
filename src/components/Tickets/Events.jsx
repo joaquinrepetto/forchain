@@ -14,7 +14,11 @@ import {
   EventInfoLocation,
 } from "../../containers/Tickets/ticketsStyles";
 
-const Events = ({ thisWeekEvents, nextWeekEvents }) => {
+const Events = ({
+  thisWeekEvents,
+  nextWeekEvents,
+  handleClickEventNavigate,
+}) => {
   return (
     <EventsContainer>
       <ThisWeekEventsContainer>
@@ -23,7 +27,7 @@ const Events = ({ thisWeekEvents, nextWeekEvents }) => {
         </TitleContainerEvents>
         {thisWeekEvents?.map((event, index) => {
           return (
-            <Event key={index}>
+            <Event key={index} onClick={() => handleClickEventNavigate(event)}>
               <EventImgContainer>
                 <EventImg src={event.picture} alt={event.title} />
               </EventImgContainer>
@@ -43,7 +47,10 @@ const Events = ({ thisWeekEvents, nextWeekEvents }) => {
         <EventsContainer>
           {nextWeekEvents?.map((event, index) => {
             return (
-              <Event key={index}>
+              <Event
+                key={index}
+                onClick={() => handleClickEventNavigate(event)}
+              >
                 <EventImgContainer>
                   <EventImg src={event.picture} alt={event.title} />
                 </EventImgContainer>
