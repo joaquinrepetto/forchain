@@ -304,7 +304,7 @@ export const ModalWrapper = styled.div`
   padding: 20px;
   margin-left: -20px;
   margin-right: -20px;
-  z-index: 999;
+  z-index: 998;
 `;
 
 export const TicketCounter = styled.div`
@@ -393,7 +393,7 @@ export const ButtonsContainer = styled.div`
 export const ModalFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  z-index: 100;
+  z-index: 999;
   background-color: ${theme.colors.darkBlue};
   position: fixed;
   width: 100%;
