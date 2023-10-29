@@ -6,6 +6,7 @@ export const Container = styled.div`
   min-height: 100vh;
   color: white;
   padding: 20px;
+  padding-bottom: 0px;
 `;
 
 export const TitleH2 = styled.h2`

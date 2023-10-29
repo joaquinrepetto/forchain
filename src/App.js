@@ -6,6 +6,7 @@ import Footer from "./containers/Layout/Footer/Footer";
 import Home from "./containers/Home/Home";
 import SingleEvent from "./containers/SingleEvent/SingleEvent";
 import Tickets from "./containers/Tickets/Tickets";
+import SingleTicket from "./containers/Tickets/SingleTicket";
 
 export default function App() {
   const [user, setUser] = useState(false);
@@ -21,6 +22,7 @@ export default function App() {
             path="/tickets"
             element={<Tickets user={user} setUser={setUser} />}
           />
+          <Route path="/tickets/:id" element={<SingleTicket user={user} />} />
         </Routes>
         <Footer />
       </Layout>
