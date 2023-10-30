@@ -1,19 +1,5 @@
 import { useState } from "react";
 import {
-  TicketsContainer,
-  TitleTicketsContainer,
-  TitleTickets,
-  TicketsBodyLogged,
-  TicketTypesContainer,
-  TicketTypes,
-  ButtonTicketTypes,
-  TicketsBodyUnlogged,
-  SubtitleContainer,
-  SubTitle,
-  ButtonLoginContainer,
-  ButtonLogin,
-} from "./ticketsStyles";
-import {
   thisWeekEvents,
   nextWeekEvents,
   pastEvents,
@@ -22,6 +8,7 @@ import Events from "../../components/Tickets/Events";
 import PastEvents from "../../components/Tickets/PastEvents";
 import { handleRedirect } from "../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
+import Screen from "../../components/Screen/Screen";
 
 const Tickets = ({ user }) => {
   const navigate = useNavigate();
@@ -31,50 +18,33 @@ const Tickets = ({ user }) => {
     handleRedirect(navigate, `/tickets/${event.id}`);
   };
 
+  const renderContent = (activeTab) => {
+    if (activeTab === "Próximos") {
+      return (
+        <Events
+          thisWeekEvents={thisWeekEvents}
+          nextWeekEvents={nextWeekEvents}
+          handleClickEventNavigate={handleClickEventNavigate}
+        />
+      );
+    } else if (activeTab === "Pasados") {
+      return <PastEvents pastEvents={pastEvents} />;
+    }
+  };
+
+  const onClickLogin = () => {};
+
   return (
-    <TicketsContainer>
-      <TitleTicketsContainer>
-        <TitleTickets>Mis tickets</TitleTickets>
-      </TitleTicketsContainer>
-      {user ? (
-        <TicketsBodyLogged>
-          <TicketTypesContainer>
-            <TicketTypes>
-              <ButtonTicketTypes
-                isActive={activeTab === "Próximos"}
-                onClick={() => setActiveTab("Próximos")}
-              >
-                Próximos
-              </ButtonTicketTypes>
-              <ButtonTicketTypes
-                isActive={activeTab === "Pasados"}
-                onClick={() => setActiveTab("Pasados")}
-              >
-                Pasados
-              </ButtonTicketTypes>
-            </TicketTypes>
-          </TicketTypesContainer>
-          {activeTab === "Próximos" ? (
-            <Events
-              thisWeekEvents={thisWeekEvents}
-              nextWeekEvents={nextWeekEvents}
-              handleClickEventNavigate={handleClickEventNavigate}
-            />
-          ) : (
-            <PastEvents pastEvents={pastEvents} />
-          )}
-        </TicketsBodyLogged>
-      ) : (
-        <TicketsBodyUnlogged>
-          <SubtitleContainer>
-            <SubTitle>Necesitas inciar sesión para ver tus tickets</SubTitle>
-          </SubtitleContainer>
-          <ButtonLoginContainer>
-            <ButtonLogin>Iniciar sesión</ButtonLogin>
-          </ButtonLoginContainer>
-        </TicketsBodyUnlogged>
-      )}
-    </TicketsContainer>
+    <Screen
+      user={user}
+      activeTab={activeTab}
+      setActiveTab={setActiveTab}
+      titleScreen="Mis tickets"
+      tabLabels={["Próximos", "Pasados"]}
+      renderContent={renderContent}
+      subtitle="Necesitas inciar sesión para ver tus tickets"
+      onClick={onClickLogin}
+    />
   );
 };
 

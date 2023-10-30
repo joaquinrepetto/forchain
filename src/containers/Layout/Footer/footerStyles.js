@@ -62,6 +62,7 @@ export const Icon = styled.img`
   width: 26px;
   height: 26px;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 export const CloseButton = styled.img`
