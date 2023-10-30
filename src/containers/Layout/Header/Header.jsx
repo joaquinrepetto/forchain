@@ -16,6 +16,7 @@ import { handleRedirect } from "../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../../components/Modal/Modal";
 import Menu from "./Menu/Menu";
+import SearchWindow from "../Footer/SearchWindow";
 
 const Header = ({ user, setUser }) => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Header = ({ user, setUser }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [isPathEvent, setIsPathEvent] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [searchWindowOpen, setSearchWindowOpen] = useState(false);
 
   useEffect(() => {
     if (location.pathname.includes("/eventos/")) {
@@ -51,7 +53,13 @@ const Header = ({ user, setUser }) => {
           </ProfileIconAndMenu>
           {showModal && (
             <Modal handleCloseForm={handleCloseForm}>
-              <Menu user={user} />
+              <Menu
+                user={user}
+                setShowLogin={setShowLogin}
+                setSearchWindowOpen={setSearchWindowOpen}
+                searchWindowOpen={searchWindowOpen}
+                handleCloseForm={handleCloseForm}
+              />
             </Modal>
           )}
         </>
@@ -62,7 +70,13 @@ const Header = ({ user, setUser }) => {
           <MenuButton src={menuIcon} onClick={() => setShowModal(true)} />
           {showModal && (
             <Modal handleCloseForm={handleCloseForm}>
-              <Menu user={user} />
+              <Menu
+                user={user}
+                setShowLogin={setShowLogin}
+                setSearchWindowOpen={setSearchWindowOpen}
+                searchWindowOpen={searchWindowOpen}
+                handleCloseForm={handleCloseForm}
+              />
             </Modal>
           )}
         </>
@@ -81,6 +95,10 @@ const Header = ({ user, setUser }) => {
           setShowLogin={setShowLogin}
         ></LoginWindow>
       ) : null}
+
+      {searchWindowOpen && (
+        <SearchWindow setSearchWindowOpen={setSearchWindowOpen}></SearchWindow>
+      )}
     </HeaderStyled>
   );
 };
