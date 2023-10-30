@@ -13,7 +13,6 @@ export const TitleH2 = styled.h2`
   color: ${theme.colors.titleText};
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;
-  font-weight: 400;
 `;
 
 export const ComponentSeparator = styled.div`
@@ -26,7 +25,7 @@ export const Clickable = styled.div`
 `;
 
 export const PurpleButton = styled.button`
-  background-color: #695ddf;
+  background-color: ${theme.colors.purpleBorder};
   border: none;
   width: 360px;
   height: 54px;
@@ -84,6 +83,7 @@ export const ButtonScreenTypes = styled(({ isActive, ...rest }) => (
     props.isActive ? `${theme.colors.border}` : `transparent`};
   border-radius: 20px;
   padding: 10px 20px;
+  cursor: pointer;
 `;
 
 export const ScreenBodyUnlogged = styled.div`

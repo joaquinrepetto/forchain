@@ -13,6 +13,7 @@ const theme = {
     minusColor: "#838181",
     purpleButton: "#201A39",
     successBackground: "#69BA8B",
+    inactive: "#515161",
   },
 };
 

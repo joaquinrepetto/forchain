@@ -25,6 +25,7 @@ export const Event = styled.div`
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 20px;
+  border: solid 1px ${theme.colors.border};
 `;
 
 export const EventImgContainer = styled.div`

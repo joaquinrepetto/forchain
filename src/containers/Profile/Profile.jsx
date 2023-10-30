@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Screen from "../../components/Screen/Screen";
+import Info from "../../components/Profile/Info";
+import MyEvents from "../../components/Profile/MyEvents";
 
 const Profile = ({ user }) => {
   const [activeTab, setActiveTab] = useState("Información");
 
   const renderContent = (activeTab) => {
     if (activeTab === "Información") {
-      return <h1>Información</h1>;
+      return <Info />;
     } else if (activeTab === "Mis eventos") {
-      return <h1>Mis eventos</h1>;
+      return <MyEvents />;
     }
   };
 
