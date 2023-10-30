@@ -12,9 +12,10 @@ export const Logo = styled.img`
   height: 25px;
 `;
 
-export const Menu = styled.img`
+export const MenuButton = styled.img`
   width: 22.53px;
   height: 12px;
+  margin-left: 26.92px;
 `;
 export const ProfileIconImg = styled.img`
   object-fit: cover;
@@ -42,8 +43,8 @@ export const MenuContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: solid 1px red;
-  width: 100vw;
+
+  width: calc(100vw - 40px);
 `;
 
 export const OptionsContainer = styled.div`
@@ -51,7 +52,7 @@ export const OptionsContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  border: solid 1px red;
+
   width: 100vw;
   height: 224px;
 `;
@@ -73,6 +74,12 @@ export const PopularSearch = styled.body`
 export const LoginButtonContainer = styled.div`
   display: flex;
   width: 100vw;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ProfileIconAndMenu = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
 `;

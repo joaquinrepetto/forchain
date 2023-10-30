@@ -5,13 +5,31 @@ import {
   Option,
   LoginButtonContainer,
 } from "../headerStyles";
+import { handleRedirect } from "../../../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
+
 const Menu = ({ user }) => {
-  const options = ["Inicio", "Buscar evento", "Mis tickets", "Perfil"];
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    handleRedirect(navigate, path);
+  };
+
+  const options = [
+    { title: "Inicio", path: "/" },
+    { title: "Buscar evento", path: "none" },
+    { title: "Mis tickets", path: "/tickets" },
+    { title: "Perfil", path: "/profile" },
+  ];
   return (
     <MenuContainer>
       <OptionsContainer>
         {options.map((option) => {
-          return <Option>{option}</Option>;
+          return (
+            <Option onClick={() => handleNavigate(option.path)}>
+              {option.title}
+            </Option>
+          );
         })}
       </OptionsContainer>
       {user ? null : (
