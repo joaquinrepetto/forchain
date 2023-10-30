@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledInput, InputWrapper, StyledLabel } from "./inputFormStyles";
+import {
+  StyledInput,
+  InputWrapper,
+  StyledLabel,
+  EditIconStyled,
+} from "./inputFormStyles";
 
 const InputForm = ({
   placeholder,
@@ -10,7 +15,10 @@ const InputForm = ({
   onChange,
   onBlur,
   onFocus,
+  isEditable,
 }) => {
+  const EditIcon = () => <EditIconStyled>✏️</EditIconStyled>;
+
   return (
     <InputWrapper>
       <StyledLabel htmlFor={id}>{placeholder}*</StyledLabel>
@@ -24,6 +32,7 @@ const InputForm = ({
         onBlur={onBlur}
         onFocus={onFocus}
       />
+      {isEditable && <EditIcon />}
     </InputWrapper>
   );
 };

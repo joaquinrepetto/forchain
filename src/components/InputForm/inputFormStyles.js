@@ -29,3 +29,10 @@ export const StyledInput = styled.input`
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 `;
+
+export const EditIconStyled = styled.span`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+`;
