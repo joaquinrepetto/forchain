@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../../theme";
 
 export const FooterContainer = styled.div`
   display: flex;
@@ -93,6 +94,12 @@ export const ImgPlusHovered = styled.img`
   width: 25px;
   height: 25px;
   margin-left: -5px;
+`;
+
+export const ImgFire = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
 `;
 
 export const SearchInput = styled.input`
@@ -201,8 +208,8 @@ export const PopularSeachesTitle = styled.body`
 
 export const PopularSearchBox = styled.div`
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
   margin: 9px 0px;
   height: 23px;
 `;
@@ -212,4 +219,58 @@ export const PopularSearch = styled.body`
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
+  margin-left: 10px;
+`;
+
+////////////////////////////////////////////
+
+export const Event = styled.div`
+  display: flex;
+  align-items: stretch;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 20px;
+`;
+
+export const EventImgContainer = styled.div`
+  flex: 0 0 30%;
+  overflow: hidden;
+  line-height: 0;
+`;
+
+export const EventImg = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const EventInfoContainer = styled.div`
+  flex: 1;
+  padding: 20px;
+  background-color: ${theme.colors.white};
+  color: black;
+`;
+
+export const EventInfoTitle = styled.h3`
+  font-size: 20px;
+  color: ${theme.colors.darkBlue};
+  margin: 0;
+  font-family: "Codec Pro", sans-serif;
+  font-weight: bold;
+`;
+
+export const EventInfo = styled.h3`
+  font-size: 10px;
+  color: ${theme.colors.nameText};
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0;
+  margin-top: 5px;
+`;
+
+export const EventInfoLocation = styled.h4`
+  font-size: 10px;
+  color: ${theme.colors.purpleBorder};
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 `;

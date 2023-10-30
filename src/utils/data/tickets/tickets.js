@@ -1,3 +1,30 @@
+export const nextEvents = [
+  {
+    id: 1,
+    picture:
+      "https://growthhackers.com/wp-content/uploads/2023/06/100-ONLINE-2.png",
+    title: "GrowthHackers Conferencia 2023",
+    info: "Miércoles 08 de Noviembre | 12.00 a 13.00 hs",
+    location: "ONLINE",
+  },
+  {
+    id: 2,
+    picture:
+      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F616570909%2F1786466898913%2F1%2Foriginal.20231009-192608?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1788%2C894&s=98fbfd65562176aad08eb97ea027be59",
+    title: "Rootstock rooftops",
+    info: "Miércoles 08 de Noviembre | 12.00 a 13.00 hs",
+    location: "Puerto Madero",
+  },
+  {
+    id: 1,
+    picture:
+      "https://framerusercontent.com/images/SG9mqUGOp1NtHIpIEpN7d5yGt2E.png",
+    title: "SDCONF",
+    info: "Sábado 11 de Noviembre | 18.00 hs",
+    location: "La Plata",
+  },
+];
+
 export const thisWeekEvents = [
   {
     id: 1,
