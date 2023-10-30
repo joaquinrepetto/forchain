@@ -8,6 +8,9 @@ import {
   ButtonPlus,
   FooterContainer,
   ButtonPlusContainer,
+  ButtonPlusItemsContainer,
+  ImgPlus,
+  ImgPlusHovered,
 } from "./footerStyles";
 import homeIcon from "../../../assets/imgs/home-icon-white.png";
 import homeIconPurple from "../../../assets/imgs/home-icon-purple.png";
@@ -16,6 +19,7 @@ import ticketIcon from "../../../assets/imgs/ticket-icon-white.png";
 import ticketIconPurple from "../../../assets/imgs/ticket-icon-purple.png";
 import userIcon from "../../../assets/imgs/user-icon-white.png";
 import userIconPurple from "../../../assets/imgs/user-icon-purple.png";
+import plusPurpleCircle from "../../../assets/imgs/plus-purple-circle.png";
 import { handleRedirect } from "../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -70,7 +74,16 @@ const Footer = () => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          {hovered ? "+ Crear evento" : "+"}
+          {hovered ? (
+            <>
+              <ImgPlusHovered src={plusPurpleCircle} />
+              Agregar evento
+            </>
+          ) : (
+            <>
+              <ImgPlus src={plusPurpleCircle} />
+            </>
+          )}
         </ButtonPlus>
       </ButtonPlusContainer>
       <TabsContainer>

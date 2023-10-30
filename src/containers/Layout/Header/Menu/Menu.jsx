@@ -7,17 +7,35 @@ import {
 } from "../headerStyles";
 import { handleRedirect } from "../../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
+import SearchWindow from "../../Footer/SearchWindow";
 
-const Menu = ({ user }) => {
+const Menu = ({
+  user,
+  setShowLogin,
+  setSearchWindowOpen,
+  searchWindowOpen,
+  handleCloseForm,
+}) => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
-    handleRedirect(navigate, path);
+    if (!path) {
+      setSearchWindowOpen(true);
+      handleCloseForm();
+    } else {
+      handleRedirect(navigate, path);
+      handleCloseForm();
+    }
+  };
+
+  const handleLoginWindow = () => {
+    setShowLogin(true);
+    handleCloseForm();
   };
 
   const options = [
     { title: "Inicio", path: "/" },
-    { title: "Buscar evento", path: "none" },
+    { title: "Buscar evento", path: null },
     { title: "Mis tickets", path: "/tickets" },
     { title: "Perfil", path: "/profile" },
   ];
@@ -34,7 +52,10 @@ const Menu = ({ user }) => {
       </OptionsContainer>
       {user ? null : (
         <LoginButtonContainer>
-          <PurpleButton style={{ marginTop: "63px" }}>
+          <PurpleButton
+            style={{ marginTop: "63px" }}
+            onClick={handleLoginWindow}
+          >
             Iniciar Sesión
           </PurpleButton>
         </LoginButtonContainer>

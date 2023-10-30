@@ -27,7 +27,7 @@ export const LoginWindowContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: gray;
-  z-index: 3;
+  z-index: 999;
   position: fixed;
   top: 0%;
   left: 0%;
@@ -43,7 +43,7 @@ export const MenuContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  margin-top: 90.5px;
   width: calc(100vw - 40px);
 `;
 

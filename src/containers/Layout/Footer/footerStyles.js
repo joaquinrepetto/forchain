@@ -46,18 +46,20 @@ export const ButtonPlusContainer = styled.div`
 `;
 export const ButtonPlus = styled.div`
   background-color: #695ddf;
+  font-family: "Codec Pro", sans-serif;
+  font-weight: 400;
 
-  height: 2rem;
-  width: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
-
+  font-size: 12px;
   &:hover {
     width: 126px;
+    height: 42px;
   }
 `;
+
 export const Icon = styled.img`
   width: 26px;
   height: 26px;
@@ -80,6 +82,17 @@ export const SearchIcon = styled.img`
   width: 34px;
   height: 34px;
   margin-right: 15px;
+`;
+
+export const ImgPlus = styled.img`
+  height: 2rem;
+  width: 2rem;
+`;
+
+export const ImgPlusHovered = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-left: -5px;
 `;
 
 export const SearchInput = styled.input`
@@ -115,7 +128,7 @@ export const SearchWindowContainer = styled.div`
 
   align-items: center;
   flex-direction: column;
-  z-index: 2;
+  z-index: 999;
   position: fixed;
   top: 0%;
   left: 0%;
