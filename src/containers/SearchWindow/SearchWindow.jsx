@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   SearchWindowContainer,
   GoBackButtonContainer,
@@ -23,27 +23,88 @@ import {
   EventInfoTitle,
   EventInfo,
   EventInfoLocation,
+  SearchResultContainer,
+  CloseButtonFilter,
+  SearchBodyContainer,
+  FilterSelectedTitle,
 } from "./searchWindowStyles";
 import xCloseButton from "../../assets/imgs/x-close-button.png";
 import closeSearchFooterButton from "../../assets/imgs/close-search-footer-button.png";
 import SearchButton from "../../assets/imgs/search-icon-white.png";
 import FireIconToITem from "../../assets/imgs/llama-de-fuego-curvada.png";
-import { nextEvents } from "../../utils/data/tickets/tickets";
+import useSearchWindow from "./useSearchWindow";
+
+import { events } from "../../utils/data/upcoming/events";
+import { handleRedirect } from "../../utils/navigate/handleRedirect";
+import { useNavigate } from "react-router-dom";
 
 const SearchWindow = ({ setSearchWindowOpen }) => {
-  const categories = [
-    "Educación",
-    "Networking",
-    "DAOS",
-    "Ethereum",
-    "Conferencias",
-  ];
+  const {
+    data,
+    setData,
+    categories,
+    setCategories,
+    popularSearches,
+    setPopularSearches,
+    resetCategories,
+  } = useSearchWindow();
+  const navigate = useNavigate();
+  const [search, setSearch] = useState({ search: "", filter: "" });
 
-  const búsquedasPopulares = [
-    "GrowthHackers Conference",
-    "Rootstock rooftops",
-    "SDCONF",
-  ];
+  const handleClickEventNavigate = (event) => {
+    handleRedirect(navigate, `/eventos/${event.id}`);
+    setSearchWindowOpen(false);
+  };
+
+  const onCloseCategory = () => {
+    resetCategories();
+    setSearch((prevState) => {
+      return { ...prevState, filter: "" };
+    });
+  };
+
+  const onChange = (e) => {
+    setSearch((prevState) => {
+      return { ...prevState, search: e.target.value };
+    });
+  };
+
+  const onSelectFilter = (category) => {
+    setCategories([category]);
+
+    setSearch((prevState) => {
+      return { ...prevState, filter: category };
+    });
+  };
+
+  const filtersAndSearch = () => {
+    let newData = events;
+    let newPopularSearches = popularSearches;
+
+    if (search.search.length) {
+      const filteredEvents = events.filter((e) =>
+        e.name.toLowerCase().startsWith(search.search.toLowerCase())
+      );
+      newData = filteredEvents;
+      newPopularSearches = filteredEvents;
+    }
+
+    if (search.filter.length) {
+      newData = newData.filter((e) => e.tags.includes(`#${search.filter}`));
+    }
+
+    if (search.filter.length || search.search.length) {
+      setData(newData);
+      setPopularSearches(newPopularSearches);
+    } else {
+      setData([]);
+      setPopularSearches(events);
+    }
+  };
+
+  useEffect(() => {
+    filtersAndSearch();
+  }, [search]);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -52,8 +113,6 @@ const SearchWindow = ({ setSearchWindowOpen }) => {
       document.body.style.overflow = "unset";
     };
   }, []);
-
-  const searchEvents = nextEvents.slice(0, 1);
 
   return (
     <SearchWindowContainer>
@@ -69,60 +128,76 @@ const SearchWindow = ({ setSearchWindowOpen }) => {
           src={xCloseButton}
         />
       </CloseButtonContainer>
-      <div
-        style={{
-          width: "345px",
-          height: "380",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
+      <SearchBodyContainer>
         <SearchinputContainer>
           <SearchIcon src={SearchButton} />
-          <SearchInput placeholder="Buscá lo que quieras" />
+          <SearchInput
+            placeholder="Buscá lo que quieras"
+            onChange={(e) => {
+              onChange(e);
+            }}
+            value={search.search}
+          />
         </SearchinputContainer>
 
         <FiltersContainer>
-          {categories.map((category) => {
+          {categories.map((category, index) => {
             return (
-              <Filterbox>
-                <Filter>{category}</Filter>
-              </Filterbox>
+              <>
+                <Filterbox key={index} onClick={() => onSelectFilter(category)}>
+                  <Filter>{category}</Filter>
+                </Filterbox>
+
+                {categories.length === 1 && (
+                  <CloseButtonFilter
+                    onClick={onCloseCategory}
+                    src={xCloseButton}
+                  />
+                )}
+              </>
             );
           })}
         </FiltersContainer>
-
-        <PopularSearchesContainer>
-          <PopularSeachesTitle>Búsquedas populares</PopularSeachesTitle>
-          {búsquedasPopulares.map((bp) => {
+        {search.filter && (
+          <FilterSelectedTitle>Búsqueda "{search.filter}"</FilterSelectedTitle>
+        )}
+        <SearchResultContainer>
+          {data.map((event, index) => {
             return (
-              <PopularSearchBox>
-                <ImgFire src={FireIconToITem} alt="" />
-                <PopularSearch>{bp}</PopularSearch>
-              </PopularSearchBox>
+              <Event
+                key={index}
+                onClick={() => handleClickEventNavigate(event)}
+              >
+                <EventImgContainer>
+                  <EventImg src={event.picture} alt={event.name} />
+                </EventImgContainer>
+                <EventInfoContainer>
+                  <EventInfoTitle>{event.name}</EventInfoTitle>
+                  <EventInfo>{event.dateAndTime}</EventInfo>
+                  <EventInfoLocation>{event.location}</EventInfoLocation>
+                </EventInfoContainer>
+              </Event>
             );
           })}
-        </PopularSearchesContainer>
-      </div>
+        </SearchResultContainer>
 
-      {/* {searchEvents.map((event, index) => {
-        return (
-          <Event
-            key={index}
-            //  onClick={() => handleClickEventNavigate(event)}
-          >
-            <EventImgContainer>
-              <EventImg src={event.picture} alt={event.title} />
-            </EventImgContainer>
-            <EventInfoContainer>
-              <EventInfoTitle>{event.title}</EventInfoTitle>
-              <EventInfo>{event.info}</EventInfo>
-              <EventInfoLocation>{event.location}</EventInfoLocation>
-            </EventInfoContainer>
-          </Event>
-        );
-      })} */}
+        {popularSearches?.length && !search.filter ? (
+          <PopularSearchesContainer>
+            <PopularSeachesTitle>Búsquedas populares</PopularSeachesTitle>
+            {popularSearches.map((bp, index) => {
+              return (
+                <PopularSearchBox
+                  key={index}
+                  onClick={() => handleClickEventNavigate(bp)}
+                >
+                  <ImgFire src={FireIconToITem} alt="" />
+                  <PopularSearch>{bp.name}</PopularSearch>
+                </PopularSearchBox>
+              );
+            })}
+          </PopularSearchesContainer>
+        ) : null}
+      </SearchBodyContainer>
     </SearchWindowContainer>
   );
 };

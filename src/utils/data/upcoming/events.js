@@ -84,7 +84,7 @@ export const events = [
       "#Ecosistema",
       "#Innvoación",
       "#Online",
-      "#Conferencia",
+      "#Conferencias",
     ],
   },
   {
@@ -165,13 +165,13 @@ export const events = [
       },
     ],
     tags: [
-      "#Educación",
       "#Blockchain",
       "#DeSci",
       "#Ecosistema",
       "#Innvoación",
       "#Online",
-      "#Conferencia",
+      "#DAOS",
+      "#Ethereum",
     ],
   },
   {
@@ -258,7 +258,8 @@ export const events = [
       "#Ecosistema",
       "#Innvoación",
       "#Online",
-      "#Conferencia",
+
+      "#Networking",
     ],
   },
 ];

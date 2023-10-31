@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
+export const SearchResultContainer = styled.div``;
 export const Event = styled.div`
   display: flex;
   align-items: stretch;
   border-radius: 18px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  height: 99px;
 `;
 
 export const EventImgContainer = styled.div`
-  flex: 0 0 30%;
+  flex: 0 0 27%;
   overflow: hidden;
   line-height: 0;
 `;
@@ -140,13 +142,13 @@ export const Filterbox = styled.div`
   border-radius: 15px;
   margin: 7px 0px;
   margin-right: 10px;
+  cursor: pointer;
 `;
 
 export const Filter = styled.body`
   color: ${theme.colors.white};
   font-family: "Codec Pro", sans-serif;
   font-size: 14px;
-  cursor: pointer;
 `;
 
 export const PopularSearchesContainer = styled.div`
@@ -161,6 +163,24 @@ export const PopularSeachesTitle = styled.body`
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
   margin-bottom: 17px;
+`;
+
+export const FilterSelectedTitle = styled.body`
+  color: ${theme.colors.titleText};
+  font-size: 23px;
+  font-family: "Codec Pro", sans-serif;
+  font-weight: 400;
+  margin-bottom: 17px;
+  margin-top: 45px;
+  margin-bottom: 28px;
+`;
+
+export const SearchBodyContainer = styled.body`
+  width: 345px;
+  height: 380;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const PopularSearchBox = styled.div`
@@ -197,4 +217,14 @@ export const SearchIcon = styled.img`
   width: 34px;
   height: 34px;
   margin-right: 15px;
+`;
+
+export const CloseButtonFilter = styled.img`
+  cursor: pointer;
+  width: 7x;
+  height: 7px;
+  object-fit: cover;
+  position: relative;
+  top: 21px;
+  right: 26px;
 `;
