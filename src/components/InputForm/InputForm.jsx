@@ -4,7 +4,11 @@ import {
   InputWrapper,
   StyledLabel,
   EditIconStyled,
+  EditIconImg,
 } from "./inputFormStyles";
+
+import LapizIcon from "../../assets/imgs/lapiz.png";
+import LocationIconImg from "../../assets/imgs/target-icon.png";
 
 const InputForm = ({
   placeholder,
@@ -16,13 +20,31 @@ const InputForm = ({
   onBlur,
   onFocus,
   isEditable,
+  isLocation,
+  labelColor,
+  placeHolderColor,
 }) => {
-  const EditIcon = () => <EditIconStyled>✏️</EditIconStyled>;
-
+  const EditIcon = () => (
+    <EditIconStyled>
+      <EditIconImg src={LapizIcon} />
+    </EditIconStyled>
+  );
+  const LocationIcon = () => (
+    <EditIconStyled>
+      <EditIconImg src={LocationIconImg} />
+    </EditIconStyled>
+  );
   return (
     <InputWrapper>
-      <StyledLabel htmlFor={id}>{placeholder}*</StyledLabel>
+      <StyledLabel
+        labelColor={labelColor}
+        placeHolderColor={placeHolderColor}
+        htmlFor={id}
+      >
+        {placeholder}*
+      </StyledLabel>
       <StyledInput
+        className={type === "date" ? "custom-date-picker" : ""}
         placeholder={placeholder}
         type={type}
         name={name}
@@ -31,8 +53,10 @@ const InputForm = ({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        placeHolderColor={placeHolderColor}
       />
       {isEditable && <EditIcon />}
+      {isLocation && <LocationIcon />}
     </InputWrapper>
   );
 };

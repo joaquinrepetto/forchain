@@ -33,7 +33,7 @@ const Footer = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.includes("/eventos/")) {
+    if (location.pathname.includes("/events/")) {
       setLocationIcon("eventos");
     } else if (location.pathname === "/") {
       setLocationIcon("home");

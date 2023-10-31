@@ -14,6 +14,8 @@ const theme = {
     purpleButton: "#201A39",
     successBackground: "#69BA8B",
     inactive: "#515161",
+    subtitleFile: "#7A798B",
+    red: "#DD2323",
   },
 };
 

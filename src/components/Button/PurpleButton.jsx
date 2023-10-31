@@ -1,9 +1,20 @@
 import React from "react";
 import { PurpleButtonStyled } from "./buttonStyles";
 
-const PurpleButton = ({ children, onClick, disabled }) => {
+const PurpleButton = ({
+  children,
+  onClick,
+  disabled,
+  cancel,
+  ...restProps
+}) => {
   return (
-    <PurpleButtonStyled onClick={onClick} disabled={disabled}>
+    <PurpleButtonStyled
+      onClick={onClick}
+      disabled={disabled}
+      cancel={cancel}
+      {...restProps}
+    >
       {children}
     </PurpleButtonStyled>
   );

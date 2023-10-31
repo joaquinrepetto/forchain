@@ -5,12 +5,30 @@ import MyEvents from "../../components/Profile/MyEvents";
 
 const Profile = ({ user }) => {
   const [activeTab, setActiveTab] = useState("Información");
+  const [showFirstModal, setShowFirstModal] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
+
+  const handleFirstModal = () => {
+    setShowFirstModal(!showFirstModal);
+    setShowSecondModal(false);
+  };
+
+  const handleSecondModal = () => {
+    setShowSecondModal(!showSecondModal);
+  };
 
   const renderContent = (activeTab) => {
     if (activeTab === "Información") {
       return <Info />;
     } else if (activeTab === "Mis eventos") {
-      return <MyEvents />;
+      return (
+        <MyEvents
+          handleFirstModal={handleFirstModal}
+          showFirstModal={showFirstModal}
+          handleSecondModal={handleSecondModal}
+          showSecondModal={showSecondModal}
+        />
+      );
     }
   };
 

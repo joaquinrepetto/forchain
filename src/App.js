@@ -18,7 +18,7 @@ export default function App() {
         <Header user={user} setUser={setUser} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/eventos/:id" element={<SingleEvent />} />
+          <Route path="/events/:id" element={<SingleEvent />} />
           <Route
             path="/tickets"
             element={<Tickets user={user} setUser={setUser} />}

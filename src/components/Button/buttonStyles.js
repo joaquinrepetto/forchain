@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
-export const PurpleButtonStyled = styled.button`
-  background-color: ${({ disabled }) =>
-    disabled ? theme.colors.inactive : theme.colors.purpleBorder};
+export const PurpleButtonStyled = styled(({ cancel, ...rest }) => (
+  <button {...rest} />
+))`
+  background-color: ${({ disabled, cancel }) =>
+    disabled || cancel ? theme.colors.inactive : theme.colors.purpleBorder};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   color: white;
   padding: 15px 20px;

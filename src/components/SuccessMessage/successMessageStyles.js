@@ -69,4 +69,13 @@ export const SuccessButton = styled.div`
   font-family: "Codec Pro", sans-serif;
   font-size: 28px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+export const ArrowIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+  margin-left: 5px;
 `;

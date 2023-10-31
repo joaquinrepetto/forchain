@@ -33,8 +33,9 @@ const Screen = ({
         <ScreenBodyLogged>
           <ScreenTypesContainer>
             <ScreenTypes>
-              {tabLabels.map((label) => (
+              {tabLabels.map((label, index) => (
                 <ButtonScreenTypes
+                  key={index}
                   isActive={activeTab === label}
                   onClick={() => setActiveTab(label)}
                 >

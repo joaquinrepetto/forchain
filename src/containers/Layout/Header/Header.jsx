@@ -27,7 +27,7 @@ const Header = ({ user, setUser }) => {
   const [searchWindowOpen, setSearchWindowOpen] = useState(false);
 
   useEffect(() => {
-    if (location.pathname.includes("/eventos/")) {
+    if (location.pathname.includes("/events/")) {
       setIsPathEvent(true);
     } else {
       setIsPathEvent(false);
