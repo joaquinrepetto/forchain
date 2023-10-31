@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   SearchWindowContainer,
   GoBackButtonContainer,
@@ -23,12 +23,12 @@ import {
   EventInfoTitle,
   EventInfo,
   EventInfoLocation,
-} from "./footerStyles";
-import xCloseButton from "../../../assets/imgs/x-close-button.png";
-import closeSearchFooterButton from "../../../assets/imgs/close-search-footer-button.png";
-import SearchButton from "../../../assets/imgs/search-icon-white.png";
-import FireIconToITem from "../../../assets/imgs/llama-de-fuego-curvada.png";
-import { nextEvents } from "../../../utils/data/tickets/tickets";
+} from "./searchWindowStyles";
+import xCloseButton from "../../assets/imgs/x-close-button.png";
+import closeSearchFooterButton from "../../assets/imgs/close-search-footer-button.png";
+import SearchButton from "../../assets/imgs/search-icon-white.png";
+import FireIconToITem from "../../assets/imgs/llama-de-fuego-curvada.png";
+import { nextEvents } from "../../utils/data/tickets/tickets";
 
 const SearchWindow = ({ setSearchWindowOpen }) => {
   const categories = [

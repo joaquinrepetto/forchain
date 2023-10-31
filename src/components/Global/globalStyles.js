@@ -120,7 +120,7 @@ export const ButtonLoginContainer = styled.div`
 `;
 export const ButtonLogin = styled.button`
   background-color: ${theme.colors.purpleBorder};
-  color: white;
+  color: ${theme.colors.white};
   padding: 15px 20px;
   border: none;
   border-radius: 17px;
