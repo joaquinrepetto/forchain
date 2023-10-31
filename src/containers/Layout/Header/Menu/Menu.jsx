@@ -7,7 +7,6 @@ import {
 } from "../headerStyles";
 import { handleRedirect } from "../../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
-import SearchWindow from "../../Footer/SearchWindow";
 
 const Menu = ({
   user,
