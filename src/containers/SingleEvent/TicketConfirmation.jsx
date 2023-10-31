@@ -7,7 +7,7 @@ const TicketConfirmation = ({ event, handleNavigate }) => {
       title="Tus entradas para"
       subtitle={event.name}
       indication="Ya están disponibles en"
-      buttonText="Mis tickets >"
+      buttonText="Mis tickets"
       acknowledgments="¡Gracias!"
       onClick={handleNavigate}
     />

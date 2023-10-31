@@ -18,7 +18,7 @@ const UpcomingEvents = () => {
         <Clickable
           key={index}
           onClick={() => {
-            handleRedirect(navigate, `/eventos/${event.id}`);
+            handleRedirect(navigate, `/events/${event.id}`);
           }}
         >
           <UpcomingEventsComponent

@@ -10,6 +10,8 @@ import {
   ContainerAcknowledgments,
   AcknowledgmentsText,
 } from "./successMessageStyles";
+import { ArrowIcon } from "./successMessageStyles";
+import ArrowIconImg from "../../assets/imgs/arrow.svg";
 
 const SuccessMessage = ({
   title,
@@ -33,6 +35,7 @@ const SuccessMessage = ({
           }}
         >
           {buttonText}
+          <ArrowIcon src={ArrowIconImg} />
         </SuccessButton>
         <ContainerAcknowledgments>
           <AcknowledgmentsText>{acknowledgments}</AcknowledgmentsText>

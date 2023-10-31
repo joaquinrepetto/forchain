@@ -80,7 +80,7 @@ export const ButtonScreenTypes = styled(({ isActive, ...rest }) => (
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
   background-color: ${(props) =>
-    props.isActive ? `${theme.colors.border}` : `transparent`};
+    props.isActive ? `${theme.colors.inactive}` : `transparent`};
   border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;

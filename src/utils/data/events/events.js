@@ -20,12 +20,11 @@ export const events = [
     id: 4,
     name: "Ethereal meeting",
     image:
-      "https://kanbanzone.com/wp-content/uploads/2020/10/team-meeting.jpg",
+      "https://www.sessionlab.com/wp-content/uploads/productive-team-meetings-cover.jpg",
   },
   {
     id: 5,
     name: "Last one",
-    image:
-      "https://resizer.otstatic.com/v2/photos/wide-huge/1/31920150.jpg",
+    image: "https://resizer.otstatic.com/v2/photos/wide-huge/1/31920150.jpg",
   },
 ];

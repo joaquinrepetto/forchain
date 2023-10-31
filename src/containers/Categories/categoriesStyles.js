@@ -20,7 +20,9 @@ export const CategoriesContainer = styled.div`
   overflow-x: auto;
 `;
 
-export const CategoryButton = styled.button`
+export const CategoryButton = styled(({ active, ...rest }) => (
+  <button {...rest} />
+))`
   background-color: ${(props) =>
     props.active ? `${theme.colors.white}` : `${theme.colors.purpleButton}`};
   color: ${(props) =>

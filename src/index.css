@@ -12,6 +12,24 @@ code {
     monospace;
 }
 
+.custom-date-picker::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.custom-date-picker::after {
+  content: "";
+  background-image: url("../src/assets/imgs/close-search-footer-button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 @font-face {
   font-family: "Codec Pro";
   src: url("/src/assets/fonts/CodecPro.ttf");
