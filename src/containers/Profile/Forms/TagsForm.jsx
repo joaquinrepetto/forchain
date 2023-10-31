@@ -10,8 +10,8 @@ import {
   TagContainer,
   TagList,
   SpanText,
-} from "./profileStyles";
-import CloseIcon from "../../assets/imgs/CloseIcon.svg";
+} from "../profileStyles";
+import CloseIcon from "../../../assets/imgs/CloseIcon.svg";
 
 const TagsForm = ({
   tags,

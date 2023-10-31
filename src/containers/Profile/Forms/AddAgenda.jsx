@@ -3,21 +3,21 @@ import {
   SectionForm,
   ButtonAgenda,
   ContainerAgendaForm,
-} from "./profileStyles";
-import InputForm from "../../components/InputForm/InputForm";
-import theme from "../../theme";
-import SelectForm from "../../components/SelectForm/SelectForm";
+} from "../profileStyles";
+import InputForm from "../../../components/InputForm/InputForm";
+import theme from "../../../theme";
+import SelectForm from "../../../components/SelectForm/SelectForm";
 import {
   startTimeOptions,
   endTimeOptions,
-} from "../../utils/data/options/options";
-import {
+} from "../../../utils/data/options/options";
+import { 
   StyledInput,
   StyledTextArea,
   DeleteText,
   ContainerDeleteEntry,
-} from "../../containers/Profile/profileStyles";
-import PurpleButton from "../../components/Button/PurpleButton";
+} from "../profileStyles";
+import PurpleButton from "../../../components/Button/PurpleButton";
 
 const AddAgenda = () => {
   const [showAgendaForm, setShowAgendaForm] = useState(false);

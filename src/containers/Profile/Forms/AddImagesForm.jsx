@@ -9,8 +9,8 @@ import {
   SubtitleFile,
   ContainerSubtitleFile,
   ButtonFile,
-} from "./profileStyles";
-import FileIconImg from "../../assets/imgs/file.svg";
+} from "../profileStyles";
+import FileIconImg from "../../../assets/imgs/file.svg"; 
 
 const AddImagesForm = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);

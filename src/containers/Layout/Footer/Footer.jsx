@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SearchWindow from "./SearchWindow";
+import SearchWindow from "../../SearchWindow/SearchWindow";
 import {
   TabsContainer,
   Tab,

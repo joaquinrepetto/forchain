@@ -20,14 +20,14 @@ import {
   timeZoneOptions,
 } from "../../utils/data/options/options";
 import PurpleButton from "../../components/Button/PurpleButton";
-import BasicInformationForm from "./BasicInformation";
-import UbicationForm from "./UbicationForm";
-import DateAndTimeForm from "./DateAndTimeForm";
-import TagsForm from "./TagsForm";
+import BasicInformationForm from "./Forms/BasicInformation";
+import UbicationForm from "./Forms/UbicationForm";
+import DateAndTimeForm from "./Forms/DateAndTimeForm";
+import TagsForm from "./Forms/TagsForm";
 import ArrowIconImg from "../../assets/imgs/arrow.svg";
-import AddImagesForm from "./AddImagesForm";
-import DescriptionForm from "./DescriptionForm";
-import AddAgenda from "./AddAgenda";
+import AddImagesForm from "./Forms/AddImagesForm";
+import DescriptionForm from "./Forms/DescriptionForm";
+import AddAgenda from "./Forms/AddAgenda";
 import SuccessMessage from "../../components/SuccessMessage/SuccessMessage";
 
 const CreateEvent = ({

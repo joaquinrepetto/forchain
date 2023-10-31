@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../../theme";
 
 export const HeaderStyled = styled.header`
   display: flex;
@@ -10,6 +11,7 @@ export const Logo = styled.img`
   object-fit: cover;
   width: 138px;
   height: 25px;
+  cursor: pointer;
 `;
 
 export const MenuButton = styled.img`
@@ -26,7 +28,7 @@ export const ProfileIconImg = styled.img`
 export const LoginWindowContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  background-color: ${theme.colors.background};
   z-index: 999;
   position: fixed;
   top: 0%;
@@ -58,14 +60,14 @@ export const OptionsContainer = styled.div`
 `;
 
 export const Option = styled.body`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 32px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
 `;
 
 export const PopularSearch = styled.body`
-  color: #c5c5c9;
+  color: ${theme.colors.nameText};
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;

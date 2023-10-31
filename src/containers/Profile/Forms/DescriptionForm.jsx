@@ -6,14 +6,14 @@ import {
   TextArea,
   TextAreaContainer,
   SpanTextArea,
-} from "./profileStyles";
+} from "../profileStyles";
 
 const DescriptionForm = () => {
   const [description, setDescription] = useState("");
 
   const handleDescription = (e) => {
     setDescription(e.target.value);
-  };
+  }; 
 
   return (
     <SectionForm>

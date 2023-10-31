@@ -1,7 +1,7 @@
 import React from "react";
-import { SectionForm, SectionFormTitle } from "./profileStyles";
-import InputForm from "../../components/InputForm/InputForm";
-import SelectForm from "../../components/SelectForm/SelectForm";
+import { SectionForm, SectionFormTitle } from "../profileStyles";
+import InputForm from "../../../components/InputForm/InputForm";
+import SelectForm from "../../../components/SelectForm/SelectForm";
 
 const BasicInformationForm = ({ typeOfEventOptions, categoriesOptions }) => {
   return (
@@ -14,7 +14,7 @@ const BasicInformationForm = ({ typeOfEventOptions, categoriesOptions }) => {
         options={typeOfEventOptions}
       />
       <SelectForm
-        placeholder="Categorías"
+        placeholder="Categorías" 
         type="text"
         options={categoriesOptions}
       />

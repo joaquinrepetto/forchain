@@ -7,7 +7,7 @@ import {
   ProfileIconImg,
   ProfileIconAndMenu,
 } from "./headerStyles";
-import { TitleH2 } from "../../../components/Global/globalStyles.js";
+import { Clickable, TitleH2 } from "../../../components/Global/globalStyles.js";
 import LoginWindow from "./LoginWindow";
 import forchainLogo from "../../../assets/imgs/forchain-blanco-logo.png";
 import menuIcon from "../../../assets/imgs/menu-header.png";
@@ -16,7 +16,7 @@ import { handleRedirect } from "../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../../components/Modal/Modal";
 import Menu from "./Menu/Menu";
-import SearchWindow from "../Footer/SearchWindow";
+import SearchWindow from "../../SearchWindow/SearchWindow";
 
 const Header = ({ user, setUser }) => {
   const navigate = useNavigate();
@@ -81,12 +81,14 @@ const Header = ({ user, setUser }) => {
           )}
         </>
       ) : (
-        <TitleH2
-          style={{ fontSize: "14px", paddingTop: "10px" }}
-          onClick={() => setShowLogin(true)}
-        >
-          Iniciar sesión
-        </TitleH2>
+        <Clickable>
+          <TitleH2
+            style={{ fontSize: "14px", paddingTop: "10px" }}
+            onClick={() => setShowLogin(true)}
+          >
+            Iniciar sesión
+          </TitleH2>
+        </Clickable>
       )}
       {showLogin ? (
         <LoginWindow

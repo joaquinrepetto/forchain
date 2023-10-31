@@ -7,15 +7,15 @@ import {
   ShowTimeContainer,
   StyledCheckbox,
   StyledLabel,
-} from "./profileStyles";
-import InputForm from "../../components/InputForm/InputForm";
-import SelectForm from "../../components/SelectForm/SelectForm";
+} from "../profileStyles";
+import InputForm from "../../../components/InputForm/InputForm";
+import SelectForm from "../../../components/SelectForm/SelectForm";
 
 const DateAndTimeForm = ({
   startTimeOptions,
   endTimeOptions,
   timeZoneOptions,
-}) => {
+}) => { 
   return (
     <SectionForm>
       <SectionFormTitle>Fecha y hora</SectionFormTitle>
