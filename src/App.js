@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./containers/Layout/Layout";
 import Header from "./containers/Layout/Header/Header";
@@ -10,24 +10,16 @@ import SingleTicket from "./containers/Tickets/SingleTicket";
 import Profile from "./containers/Profile/Profile";
 
 export default function App() {
-  const [user, setUser] = useState(false);
-
   return (
     <Router>
       <Layout>
-        <Header user={user} setUser={setUser} />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events/:id" element={<SingleEvent />} />
-          <Route
-            path="/tickets"
-            element={<Tickets user={user} setUser={setUser} />}
-          />
-          <Route path="/tickets/:id" element={<SingleTicket user={user} />} />
-          <Route
-            path="/profile"
-            element={<Profile user={user} setUser={setUser} />}
-          />
+          <Route path="/tickets" element={<Tickets />} />
+          <Route path="/tickets/:id" element={<SingleTicket />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Layout>

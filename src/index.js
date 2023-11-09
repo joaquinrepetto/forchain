@@ -4,11 +4,17 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+import { Web3Provider } from "./containers/Context/Web3Context";
+import { UserProvider } from "./containers/Context/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Web3Provider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </Web3Provider>
   </React.StrictMode>
 );
 

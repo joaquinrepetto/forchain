@@ -7,16 +7,12 @@ import {
 } from "../headerStyles";
 import { handleRedirect } from "../../../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../../Auth/useAuth";
 
-const Menu = ({
-  user,
-  setShowLogin,
-  setSearchWindowOpen,
-  searchWindowOpen,
-  handleCloseForm,
-}) => {
+const Menu = ({ user, setSearchWindowOpen, handleCloseForm }) => {
   const navigate = useNavigate();
-
+  const { handleConnect } = useAuth();
+  
   const handleNavigate = (path) => {
     if (!path) {
       setSearchWindowOpen(true);
@@ -25,11 +21,6 @@ const Menu = ({
       handleRedirect(navigate, path);
       handleCloseForm();
     }
-  };
-
-  const handleLoginWindow = () => {
-    setShowLogin(true);
-    handleCloseForm();
   };
 
   const options = [
@@ -53,7 +44,7 @@ const Menu = ({
         <LoginButtonContainer>
           <PurpleButton
             style={{ marginTop: "63px" }}
-            onClick={handleLoginWindow}
+            onClick={() => handleConnect()}
           >
             Iniciar Sesión
           </PurpleButton>

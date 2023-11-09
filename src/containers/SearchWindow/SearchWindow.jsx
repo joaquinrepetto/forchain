@@ -52,7 +52,7 @@ const SearchWindow = ({ setSearchWindowOpen }) => {
   const [search, setSearch] = useState({ search: "", filter: "" });
 
   const handleClickEventNavigate = (event) => {
-    handleRedirect(navigate, `/eventos/${event.id}`);
+    handleRedirect(navigate, `/events/${event.id}`);
     setSearchWindowOpen(false);
   };
 
@@ -143,8 +143,8 @@ const SearchWindow = ({ setSearchWindowOpen }) => {
         <FiltersContainer>
           {categories.map((category, index) => {
             return (
-              <>
-                <Filterbox key={index} onClick={() => onSelectFilter(category)}>
+              <div key={index}>
+                <Filterbox onClick={() => onSelectFilter(category)}>
                   <Filter>{category}</Filter>
                 </Filterbox>
 
@@ -154,7 +154,7 @@ const SearchWindow = ({ setSearchWindowOpen }) => {
                     src={xCloseButton}
                   />
                 )}
-              </>
+              </div>
             );
           })}
         </FiltersContainer>

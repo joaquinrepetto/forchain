@@ -23,6 +23,7 @@ export const ProfileIconImg = styled.img`
   object-fit: cover;
   width: 38.54;
   height: 38.54px;
+  cursor: pointer;
 `;
 
 export const LoginWindowContainer = styled.div`

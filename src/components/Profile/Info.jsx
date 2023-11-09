@@ -7,8 +7,11 @@ import {
 } from "../../containers/Profile/profileStyles";
 import InputForm from "../../components/InputForm/InputForm";
 import PurpleButton from "../Button/PurpleButton";
+import useAuth from "../../containers/Auth/useAuth";
 
 const Info = () => {
+  const { handleLogout } = useAuth();
+
   return (
     <ProfileContainer>
       <ProfileImageContainer>
@@ -32,6 +35,9 @@ const Info = () => {
         />
         <PurpleButton onClick={() => {}} disabled={true}>
           Guardar cambios
+        </PurpleButton>
+        <PurpleButton onClick={() => handleLogout()}>
+          Cerrar sesión
         </PurpleButton>
       </ProfileForm>
     </ProfileContainer>
