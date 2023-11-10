@@ -16,7 +16,7 @@ const PastEvents = ({ pastEvents }) => {
       <TitleContainerEvents>
         <TitleWeekEvents>Proof of Attendance</TitleWeekEvents>
       </TitleContainerEvents>
-      {/* <PastEventsContainer>
+      <PastEventsContainer>
         {pastEvents?.map((event, index) => {
           return (
             <SinglePastEventContainer key={index}>
@@ -27,7 +27,7 @@ const PastEvents = ({ pastEvents }) => {
             </SinglePastEventContainer>
           );
         })}
-      </PastEventsContainer> */}
+      </PastEventsContainer>
       <button onClick={CreateNFT}>Create NFT</button>
     </>
   );

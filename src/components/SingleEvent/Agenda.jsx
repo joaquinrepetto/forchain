@@ -39,8 +39,8 @@ const Agenda = ({
         </AgendaBorderContainer>
       </AgendaItemContainer>
 
-      <AgendaItemContainer isBreak>
-        <AgendaBorderContainer isBreak>
+      <AgendaItemContainer isbreak="isbreak">
+        <AgendaBorderContainer isbreak="isbreak">
           <AgendaItemTime>12.00 a 13.00 hs</AgendaItemTime>
           <AgendaItemDescription>Recreo para almorzar</AgendaItemDescription>
         </AgendaBorderContainer>

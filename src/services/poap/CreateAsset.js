@@ -6,8 +6,6 @@ const account = algosdk.generateAccount();
 console.log("Mnemonic:", algosdk.secretKeyToMnemonic(account.sk));
 console.log("Address:", account.addr);
 
-
-
 const CreateNFT = async () => {
   //Conectarse al server de Algorand test
   const algodToken = "";
@@ -24,14 +22,16 @@ const CreateNFT = async () => {
         suggestedParams,
         from: account.addr,
         assetName: "Taza de café",
-        assetUnitName: "TDC",
-        assetTotal: 100,
-        assetDecimals: 0,
+        unitName: "TDC",
+        total: 100,
+        decimals: 1,
         reserve: account.addr, // The address of the account that holds the uncirculated/unminted supply of the asset
         freeze: account.addr,
         clawback: account.addr, // The address of the account that can clawback the asset
-        assetURL: "https://blockmedia.com/wp-content/uploads/2023/01/FmIl7RUXEAgr6Hj.jpeg", // The URL where more information about the asset can be retrieved
+        assetURL:
+          "https://blockmedia.com/wp-content/uploads/2023/01/FmIl7RUXEAgr6Hj.jpeg", // The URL where more information about the asset can be retrieved
         manager: account.addr, //,
+        defaultFrozen: false,
       });
 
     let signedTxn = assetCreateTxn.signTxn(account.sk);
@@ -51,7 +51,7 @@ const CreateNFT = async () => {
     const assetIndex = assetCreateInfo["asset-index"];
 
     console.log(
-      `Asset ${assetIndex} created! See the transaction at https://testnet.algoscan.app/tx/${assetCreateTxn.txID()}`
+      `Asset ${assetIndex} created! See the transaction at https://testnet.algoexplorer.io/asset/${assetIndex}`
     );
   } catch (error) {
     console.error(error);

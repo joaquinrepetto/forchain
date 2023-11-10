@@ -155,7 +155,7 @@ export const AgendaContainer = styled.div`
 
 export const AgendaItemContainer = styled.div`
   background-color: ${(props) =>
-    props.isBreak ? `${theme.colors.white}` : `${theme.colors.softLilac}`};
+    props.isbreak ? `${theme.colors.white}` : `${theme.colors.softLilac}`};
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -163,7 +163,7 @@ export const AgendaItemContainer = styled.div`
 
 export const AgendaBorderContainer = styled.div`
   border-left: ${(props) =>
-    props.isBreak
+    props.isbreak
       ? `1px solid ${theme.colors.darkBlue}`
       : `1px solid ${theme.colors.purpleBorder}`};
   padding-left: 10px;
