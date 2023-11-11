@@ -21,8 +21,9 @@ const TicketSelectionModal = ({
   isFormOpen,
   isTicketConfirmationOpen,
   handleTicketConfirmation,
+  loadingCreateEvent,
   event,
-  handleNavigate
+  handleNavigate,
 }) => {
   return (
     <>
@@ -33,6 +34,7 @@ const TicketSelectionModal = ({
           ticketsCount={ticketsCount}
           isTicketConfirmationOpen={isTicketConfirmationOpen}
           handleTicketConfirmation={handleTicketConfirmation}
+          loadingCreateEvent={loadingCreateEvent}
           event={event}
           handleNavigate={handleNavigate}
         />

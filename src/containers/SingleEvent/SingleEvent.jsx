@@ -12,6 +12,8 @@ import Tags from "../../components/SingleEvent/Tags";
 import TicketSelectionModal from "../../components/SingleEvent/TicketSelectionModal";
 import { handleRedirect } from "../../utils/navigate/handleRedirect";
 import { useNavigate } from "react-router-dom";
+import { magicAlgorand } from "../../services/magic";
+import { createEventTicketAsset } from "../../services/CreateEventTicketAsset.js";
 
 const SingleEvent = () => {
   const { id } = useParams();
@@ -20,6 +22,7 @@ const SingleEvent = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isTicketConfirmationOpen, setIsTicketConfirmationOpen] =
     useState(false);
+  const [loadingCreateEvent, setLoadingCreateEvent] = useState(false);
 
   const navigate = useNavigate();
 
@@ -32,7 +35,12 @@ const SingleEvent = () => {
     setIsTicketConfirmationOpen(false);
   };
 
-  const handleTicketConfirmation = () => {
+  const handleTicketConfirmation = async () => {
+    setLoadingCreateEvent(true); //loading screen when minting token
+    const publicAddress = await magicAlgorand.algorand.getWallet();
+    await createEventTicketAsset(publicAddress, event?.name);
+
+    setLoadingCreateEvent(false);
     setIsTicketConfirmationOpen(true);
   };
 
@@ -98,6 +106,7 @@ const SingleEvent = () => {
         handleCloseForm={handleCloseForm}
         isTicketConfirmationOpen={isTicketConfirmationOpen}
         handleTicketConfirmation={handleTicketConfirmation}
+        loadingCreateEvent={loadingCreateEvent}
         event={event}
         handleNavigate={handleNavigate}
       />
