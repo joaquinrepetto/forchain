@@ -1,16 +1,24 @@
-import React from "react";
 import {
   ProfileContainer,
   ProfileImageContainer,
   ProfileImage,
   ProfileForm,
+  ButtonsQrsContainer,
 } from "../../containers/Profile/profileStyles";
 import InputForm from "../../components/InputForm/InputForm";
 import PurpleButton from "../Button/PurpleButton";
 import useAuth from "../../containers/Auth/useAuth";
+import React, { useState, useEffect } from "react";
+import ReadQrs from "./ReadQrs";
+import CreateQrs from "./CreateQrs";
 
 const Info = () => {
   const { handleLogout } = useAuth();
+  const [data, setData] = useState("No result");
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <ProfileContainer>
@@ -20,6 +28,10 @@ const Info = () => {
           alt="profile image"
         />
       </ProfileImageContainer>
+      <ButtonsQrsContainer>
+        <CreateQrs />
+        <ReadQrs />
+      </ButtonsQrsContainer>
       <ProfileForm>
         <InputForm
           label="Nombre"

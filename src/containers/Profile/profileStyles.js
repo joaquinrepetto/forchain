@@ -18,6 +18,14 @@ export const ProfileImageContainer = styled.div`
   overflow: hidden;
 `;
 
+export const ButtonsQrsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 35%;
+`;
+
 export const ProfileImage = styled.img`
   width: 100%;
   height: 100%;
