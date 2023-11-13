@@ -1,4 +1,4 @@
-import { magic } from "../../services/magic/index.js";
+import { magicAlgorand, magic } from "../../services/magic/index.js";
 import { useWeb3 } from "../../containers/Context/Web3Context.js";
 import { useUser } from "../../containers/Context/UserContext.js";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ const useAuth = () => {
     try {
       await magic.wallet.connectWithUI();
       initializeWeb3();
-      const { publicAddress } = await magic.user.getMetadata();
+      const { publicAddress } = await magicAlgorand.user.getMetadata();
       localStorage.setItem("user", publicAddress);
       window.location.reload();
     } catch (error) {

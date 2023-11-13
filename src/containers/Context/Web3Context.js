@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import Web3 from "web3";
-import { magic } from "../../services/magic/index";
+import { magicAlgorand } from "../../services/magic/index";
 
 // Create the context with default values
 const Web3Context = createContext({
@@ -19,7 +19,7 @@ export const Web3Provider = ({ children }) => {
   // Initialize Web3
   const initializeWeb3 = async () => {
     // Get the provider from the Magic instance
-    const provider = await magic.wallet.getProvider();
+    const provider = await magicAlgorand.wallet.getProvider();
 
     // Create a new instance of Web3 with the provider
     const web3 = new Web3(provider);
