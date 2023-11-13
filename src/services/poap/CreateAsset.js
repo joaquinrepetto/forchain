@@ -3,8 +3,8 @@ import algosdk from "algosdk";
 // Obtiene los parámetros sugeridos
 
 const account = algosdk.generateAccount();
-console.log("Mnemonic:", algosdk.secretKeyToMnemonic(account.sk));
-console.log("Address:", account.addr);
+console.log("Mnemonic POAP:", algosdk.secretKeyToMnemonic(account.sk));
+console.log("Address POAP:", account.addr);
 
 const CreateNFT = async () => {
   //Conectarse al server de Algorand test

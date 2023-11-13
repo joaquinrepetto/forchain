@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
   // Function to retrieve and set user's account.
   const fetchUserAccount = async () => {
     // Use Web3 to get user's accounts.
-    const accounts = await web3?.eth.getAccounts();
+    const accounts = await web3?.algorand?.getAccounts();
 
     // Update the user state with the first account (if available), otherwise set to null.
     setUser(accounts ? accounts[0] : null);

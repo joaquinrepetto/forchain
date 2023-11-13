@@ -1,11 +1,9 @@
 import { magicAlgorand, magic } from "../../services/magic/index.js";
 import { useWeb3 } from "../../containers/Context/Web3Context.js";
 import { useUser } from "../../containers/Context/UserContext.js";
-import { useNavigate } from "react-router-dom";
 
 const useAuth = () => {
   const { setUser } = useUser();
-  const navigate = useNavigate();
 
   const { initializeWeb3 } = useWeb3();
   const handleConnect = async () => {
@@ -25,7 +23,6 @@ const useAuth = () => {
       localStorage.removeItem("user");
       await magic.user.logout();
       setUser(null);
-      navigate("/");
     } catch (error) {
       console.log(error);
     }
