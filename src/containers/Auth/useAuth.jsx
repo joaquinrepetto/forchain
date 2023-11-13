@@ -1,4 +1,4 @@
-import { magicAlgorand } from "../../services/magic/index.js";
+import { magicAlgorand, magic } from "../../services/magic/index.js";
 import { useWeb3 } from "../../containers/Context/Web3Context.js";
 import { useUser } from "../../containers/Context/UserContext.js";
 import { useNavigate } from "react-router-dom";
@@ -10,11 +10,11 @@ const useAuth = () => {
   const { initializeWeb3 } = useWeb3();
   const handleConnect = async () => {
     try {
-      await magicAlgorand.wallet.connectWithUI();
+      await magic.wallet.connectWithUI();
       initializeWeb3();
       const { publicAddress } = await magicAlgorand.user.getMetadata();
       localStorage.setItem("user", publicAddress);
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +23,7 @@ const useAuth = () => {
   const handleLogout = async () => {
     try {
       localStorage.removeItem("user");
-      await magicAlgorand.user.logout();
+      await magic.user.logout();
       setUser(null);
       navigate("/");
     } catch (error) {
