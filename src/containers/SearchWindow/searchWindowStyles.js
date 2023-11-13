@@ -145,7 +145,7 @@ export const Filterbox = styled.div`
   cursor: pointer;
 `;
 
-export const Filter = styled.body`
+export const Filter = styled.h1`
   color: ${theme.colors.white};
   font-family: "Codec Pro", sans-serif;
   font-size: 14px;
@@ -157,7 +157,7 @@ export const PopularSearchesContainer = styled.div`
   flex-direction: column;
 `;
 
-export const PopularSeachesTitle = styled.body`
+export const PopularSeachesTitle = styled.h1`
   color: ${theme.colors.titleText};
   font-size: 23px;
   font-family: "Codec Pro", sans-serif;
@@ -165,7 +165,7 @@ export const PopularSeachesTitle = styled.body`
   margin-bottom: 17px;
 `;
 
-export const FilterSelectedTitle = styled.body`
+export const FilterSelectedTitle = styled.h1`
   color: ${theme.colors.titleText};
   font-size: 23px;
   font-family: "Codec Pro", sans-serif;
@@ -175,7 +175,7 @@ export const FilterSelectedTitle = styled.body`
   margin-bottom: 28px;
 `;
 
-export const SearchBodyContainer = styled.body`
+export const SearchBodyContainer = styled.div`
   width: 345px;
   height: 380;
   display: flex;
@@ -192,7 +192,7 @@ export const PopularSearchBox = styled.div`
   cursor: pointer;
 `;
 
-export const PopularSearch = styled.body`
+export const PopularSearch = styled.h1`
   color: ${theme.colors.nameText};
   font-size: 16px;
   font-family: "Codec Pro", sans-serif;

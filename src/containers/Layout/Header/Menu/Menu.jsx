@@ -12,7 +12,7 @@ import useAuth from "../../../Auth/useAuth";
 const Menu = ({ user, setSearchWindowOpen, handleCloseForm }) => {
   const navigate = useNavigate();
   const { handleConnect } = useAuth();
-  
+
   const handleNavigate = (path) => {
     if (!path) {
       setSearchWindowOpen(true);
@@ -32,9 +32,9 @@ const Menu = ({ user, setSearchWindowOpen, handleCloseForm }) => {
   return (
     <MenuContainer>
       <OptionsContainer>
-        {options.map((option) => {
+        {options.map((option, index) => {
           return (
-            <Option onClick={() => handleNavigate(option.path)}>
+            <Option key={index} onClick={() => handleNavigate(option.path)}>
               {option.title}
             </Option>
           );

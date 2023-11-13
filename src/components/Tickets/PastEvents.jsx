@@ -8,6 +8,7 @@ import {
   TitleContainerEvents,
   TitleWeekEvents,
 } from "../../containers/Tickets/ticketsStyles";
+import CreateNFT from "../../services/poap/CreateAsset";
 
 const PastEvents = ({ pastEvents }) => {
   return (
@@ -27,6 +28,7 @@ const PastEvents = ({ pastEvents }) => {
           );
         })}
       </PastEventsContainer>
+      <button onClick={CreateNFT}>Create NFT</button>
     </>
   );
 };
