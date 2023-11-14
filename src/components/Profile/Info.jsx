@@ -11,14 +11,24 @@ import useAuth from "../../containers/Auth/useAuth";
 import React, { useState, useEffect } from "react";
 import ReadQrs from "./ReadQrs";
 import CreateQrs from "./CreateQrs";
+import Modal from "../Modal/Modal";
 
 const Info = () => {
-  const { handleLogout } = useAuth();
-  const [data, setData] = useState("No result");
+  const { handleLogout, handleGetInfo, userInfo } = useAuth();
+  const [showModal, setShowModal] = useState(false);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    if (!userInfo) {
+      handleGetInfo();
+    }
+
+    console.log(userInfo);
+  }, [userInfo]);
+
+  const handleCloseForm = () => {
+    setShowModal(false);
+  };
 
   return (
     <ProfileContainer>
@@ -29,8 +39,16 @@ const Info = () => {
         />
       </ProfileImageContainer>
       <ButtonsQrsContainer>
-        <CreateQrs />
-        <ReadQrs />
+        <CreateQrs userInfo={userInfo} />
+        <ReadQrs setShowModal={setShowModal} setData={setData} />
+        {showModal && (
+          <Modal handleCloseForm={handleCloseForm}>
+            <>
+              <span>Email</span>
+              <span>{data?.email}</span>
+            </>
+          </Modal>
+        )}
       </ButtonsQrsContainer>
       <ProfileForm>
         <InputForm

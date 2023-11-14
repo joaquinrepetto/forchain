@@ -1,18 +1,21 @@
 import { QrReader } from "react-qr-reader";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PurpleButton from "../Button/PurpleButton";
 
-const ReadQrs = () => {
-  const qrRef = useRef(null);
+const ReadQrs = ({ setShowModal, setData }) => {
   const [scanResultfile, setResultFile] = useState("");
   const [cam, setCam] = useState(false);
-  const handlerErrorFile = (error) => {
-    console.log(error);
-  };
 
   const turnOnScanner = () => {
     setCam(true);
   };
+
+  useEffect(() => {
+    if (scanResultfile.length) {
+      setShowModal(true);
+      setData(JSON.parse(scanResultfile));
+    }
+  }, [scanResultfile]);
 
   return (
     <div
@@ -25,12 +28,12 @@ const ReadQrs = () => {
       {cam && (
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             zIndex: "1000",
-            width: "90vw",
-            height: "100vh",
-            left: "5vw",
-            top: "20%",
+            width: "70%",
+
+            left: "15%",
+            top: "10%",
           }}
         >
           <QrReader
@@ -48,7 +51,6 @@ const ReadQrs = () => {
           />
         </div>
       )}
-      <h3>Texto escaneado:{scanResultfile}</h3>
     </div>
   );
 };

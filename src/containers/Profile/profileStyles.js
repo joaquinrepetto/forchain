@@ -22,7 +22,7 @@ export const ButtonsQrsContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   width: 35%;
 `;
 

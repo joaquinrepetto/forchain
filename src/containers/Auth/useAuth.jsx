@@ -1,9 +1,11 @@
 import { magicAlgorand, magic } from "../../services/magic/index.js";
 import { useWeb3 } from "../../containers/Context/Web3Context.js";
 import { useUser } from "../../containers/Context/UserContext.js";
+import { useState } from "react";
 
 const useAuth = () => {
   const { setUser } = useUser();
+  const [userInfo, setUserInfo] = useState(null);
 
   const { initializeWeb3 } = useWeb3();
   const handleConnect = async () => {
@@ -28,9 +30,20 @@ const useAuth = () => {
     }
   };
 
+  const handleGetInfo = async () => {
+    try {
+      const data = await magic.user.getInfo();
+      setUserInfo(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     handleConnect,
     handleLogout,
+    handleGetInfo,
+    userInfo,
   };
 };
 
