@@ -38,7 +38,13 @@ const SingleEvent = () => {
   const handleTicketConfirmation = async () => {
     setLoadingCreateEvent(true); //loading screen when minting token
     const publicAddress = await magicAlgorand.algorand.getWallet();
-    await createEventTicketAsset(publicAddress, event?.name);
+    await createEventTicketAsset(
+      publicAddress,
+      event?.name,
+      event?.eventDescription,
+      event?.flyer,
+      ticketsCount
+    );
 
     setLoadingCreateEvent(false);
     setIsTicketConfirmationOpen(true);
