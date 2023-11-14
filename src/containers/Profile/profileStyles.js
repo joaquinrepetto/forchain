@@ -18,6 +18,14 @@ export const ProfileImageContainer = styled.div`
   overflow: hidden;
 `;
 
+export const ButtonsQrsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 35%;
+`;
+
 export const ProfileImage = styled.img`
   width: 100%;
   height: 100%;
@@ -404,4 +412,81 @@ export const DeleteText = styled.span`
   color: ${theme.colors.red};
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+`;
+
+export const ComunityContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 160px;
+  font-family: "Codec Pro", sans-serif;
+  font-weight: 500;
+`;
+
+export const ComunityTitle = styled.h1`
+  font-size: 25px;
+  text-align: center;
+`;
+
+export const ComunityTitleContainer = styled.div`
+  display: flex;
+`;
+export const ComunitySubtitle = styled.h4`
+  font-size: 12px;
+  text-align: center;
+`;
+export const ComunitySubtitleContainer = styled.div`
+  display: flex;
+  width: 296px;
+`;
+export const QRContainer = styled.div`
+  display: flex;
+  trasition: 0.5s;
+  :hover {
+    scale: 1.2;
+    trasition: 0.5s;
+  }
+`;
+
+export const SecondSubtitleContainer = styled.div`
+  display: flex;
+`;
+export const SecondSubtitle = styled.h4``;
+
+export const MyComuinityListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+export const MyComunityListTitle = styled.h2``;
+export const MyComunityItem = styled.div`
+  display: flex;
+  background-color: ${theme.colors.white};
+  height: 2rem;
+  width: 100%;
+  margin: 3px;
+`;
+
+export const QRSubContainer = styled.div`
+  display: flex;
+  background-color: ${theme.colors.white};
+  height: 280px;
+  width: 280px;
+
+  padding: 20px;
+  border-radius: 40px;
+`;
+
+export const QrScannModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: rgba(39, 39, 39, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+  margin-right: -20px;
+  top: 0;
+  overflow: auto;
 `;
