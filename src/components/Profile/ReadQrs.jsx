@@ -1,57 +1,28 @@
 import { QrReader } from "react-qr-reader";
-import { useEffect, useRef, useState } from "react";
-import PurpleButton from "../Button/PurpleButton";
+import { useEffect, useState } from "react";
 
-const ReadQrs = ({ setShowModal, setData }) => {
-  const [scanResultfile, setResultFile] = useState("");
-  const [cam, setCam] = useState(false);
-
-  const turnOnScanner = () => {
-    setCam(true);
-  };
+const ReadQrs = ({ setData }) => {
+  const [scanResultfile, setScanResultFile] = useState("");
 
   useEffect(() => {
     if (scanResultfile.length) {
-      setShowModal(true);
+      console.log(scanResultfile);
       setData(JSON.parse(scanResultfile));
     }
   }, [scanResultfile]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
+    <QrReader
+      scanDelay={300}
+      onResult={(result, error) => {
+        if (!!result) {
+          setScanResultFile(result?.text);
+        }
+        if (!!error) {
+        }
       }}
-    >
-      <PurpleButton onClick={turnOnScanner}>ReadQrCode</PurpleButton>
-      {cam && (
-        <div
-          style={{
-            position: "fixed",
-            zIndex: "1000",
-            width: "70%",
-
-            left: "15%",
-            top: "10%",
-          }}
-        >
-          <QrReader
-            scanDelay={300}
-            onResult={(result, error) => {
-              if (!!result) {
-                setResultFile(result?.text);
-                setCam(false);
-              }
-              if (!!error) {
-                console.info(error);
-              }
-            }}
-            style={{ width: "100%", height: "100%" }}
-          />
-        </div>
-      )}
-    </div>
+      style={{ width: "100%", height: "100%" }}
+    />
   );
 };
 

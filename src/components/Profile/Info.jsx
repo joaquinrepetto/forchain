@@ -3,32 +3,14 @@ import {
   ProfileImageContainer,
   ProfileImage,
   ProfileForm,
-  ButtonsQrsContainer,
 } from "../../containers/Profile/profileStyles";
 import InputForm from "../../components/InputForm/InputForm";
 import PurpleButton from "../Button/PurpleButton";
 import useAuth from "../../containers/Auth/useAuth";
-import React, { useState, useEffect } from "react";
-import ReadQrs from "./ReadQrs";
-import CreateQrs from "./CreateQrs";
-import Modal from "../Modal/Modal";
+import React from "react";
 
 const Info = () => {
-  const { handleLogout, handleGetInfo, userInfo } = useAuth();
-  const [showModal, setShowModal] = useState(false);
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    if (!userInfo) {
-      handleGetInfo();
-    }
-
-    console.log(userInfo);
-  }, [userInfo]);
-
-  const handleCloseForm = () => {
-    setShowModal(false);
-  };
+  const { handleLogout } = useAuth();
 
   return (
     <ProfileContainer>
@@ -38,18 +20,6 @@ const Info = () => {
           alt="profile image"
         />
       </ProfileImageContainer>
-      <ButtonsQrsContainer>
-        <CreateQrs userInfo={userInfo} />
-        <ReadQrs setShowModal={setShowModal} setData={setData} />
-        {showModal && (
-          <Modal handleCloseForm={handleCloseForm}>
-            <>
-              <span>Email</span>
-              <span>{data?.email}</span>
-            </>
-          </Modal>
-        )}
-      </ButtonsQrsContainer>
       <ProfileForm>
         <InputForm
           label="Nombre"
@@ -63,6 +33,7 @@ const Info = () => {
           placeholder="Email"
           isEditable={true}
         />
+
         <PurpleButton onClick={() => {}} disabled={true}>
           Guardar cambios
         </PurpleButton>
