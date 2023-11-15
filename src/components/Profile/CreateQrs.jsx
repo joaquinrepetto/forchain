@@ -24,7 +24,7 @@ const CreateQrs = ({ profileInfo }) => {
     <QRContainer>
       <QRSubContainer>
         {profileInfo ? (
-          <img src={qrImage} alt="qr image" />
+          <img src={qrImage} alt="qr image" style={{ width: "90%" }} />
         ) : (
           //Poner spinner
           <h3>Cargando...</h3>

@@ -440,11 +440,12 @@ export const ComunitySubtitle = styled.h4`
 `;
 export const ComunitySubtitleContainer = styled.div`
   display: flex;
-  width: 296px;
+  width: 90%;
+  justify-content: center;
 `;
 export const QRContainer = styled.div`
   display: flex;
-  width: 308px;
+  width: 95%;
   height: 300px;
   justify-content: center;
   border-bottom: 1px solid ${theme.colors.border};
@@ -458,9 +459,6 @@ export const QRSubContainer = styled.div`
   height: 262px;
   width: 270px;
   border-radius: 40px;
-  :hover {
-    scale: 1.5;
-  }
 `;
 
 export const SecondSubtitleContainer = styled.div`
@@ -511,8 +509,8 @@ export const QrScannModalContainer = styled.div`
 export const UserScannedData = styled.div`
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 393px;
+  width: 70%;
+
   max-width: 400px;
   z-index: 1001;
   border-radius: 13.5px;
