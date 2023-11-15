@@ -76,7 +76,8 @@ export const ButtonScreenTypes = styled(({ isActive, ...rest }) => (
 ))`
   border: none;
   color: ${theme.colors.white};
-  font-size: 16px;
+  font-size: max(1vw, 8.5px);
+
   font-family: "Codec Pro", sans-serif;
   font-weight: 400;
   background-color: ${(props) =>
