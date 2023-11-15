@@ -15,6 +15,12 @@ export const TitleH2 = styled.h2`
   font-family: "Codec Pro", sans-serif;
 `;
 
+export const TitleAddress = styled.h2`
+  color: ${theme.colors.titleText};
+  font-size: 14px;
+  font-family: "Codec Pro", sans-serif;
+`;
+
 export const ComponentSeparator = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;

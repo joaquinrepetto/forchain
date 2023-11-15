@@ -83,5 +83,6 @@ export const createEventTicketAsset = async (
     );
   } catch (error) {
     console.error(error);
+    window.alert("You must have ALGO in your account.");
   }
 };

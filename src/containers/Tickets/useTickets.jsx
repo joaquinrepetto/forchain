@@ -118,6 +118,7 @@ const useTickets = () => {
       setIsCreatingNft(false);
     } catch (error) {
       console.error(error);
+      window.alert("Error. You must have ALGO in your account.");
       setIsCreatingNft(false);
     }
   };
