@@ -85,5 +85,6 @@ export const createEventTicketAsset = async (
     return { txID: assetCreateTxn.txID(), ipfsHash: ipfsHash };
   } catch (error) {
     console.error(error);
+    window.alert("You must have ALGO in your account.");
   }
 };

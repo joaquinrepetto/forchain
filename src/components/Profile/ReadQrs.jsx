@@ -7,7 +7,6 @@ const ReadQrs = ({ setData, handleShowQrModalSet }) => {
   const { transferToken, connectProfile } = useProfile();
   const [scanResultfile, setScanResultFile] = useState("");
   const magicUserId = localStorage.getItem("user");
-
   useEffect(() => {
     if (scanResultfile.length) {
       const magicId = JSON.parse(scanResultfile).magicId;

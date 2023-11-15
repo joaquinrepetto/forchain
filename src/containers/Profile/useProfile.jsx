@@ -5,6 +5,7 @@ import { magicAlgorand } from "../../services/magic";
 
 const useProfile = () => {
   const [profile, setProfile] = useState(null);
+
   const getProfile = async () => {
     try {
       const id = localStorage.getItem("user");
@@ -72,6 +73,7 @@ const useProfile = () => {
 
       if (!(await hasOptedIn(scannerAddress, assetID))) {
         console.error("Error: Scanner address has not opted in for the asset.");
+        window.alert("Error: Scanner address has not opted in for the asset.");
         return;
       }
 
@@ -97,6 +99,9 @@ const useProfile = () => {
       console.log(`Tokens transferidos: Asset ID ${assetID}`);
     } catch (error) {
       console.error("Error during token creation and transfer:", error);
+      window.alert(
+        "Forchain Token was not transferred. You must have ALGO in your account."
+      );
     }
   };
 

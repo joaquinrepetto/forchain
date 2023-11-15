@@ -8,7 +8,7 @@ import InputForm from "../../components/InputForm/InputForm";
 import PurpleButton from "../Button/PurpleButton";
 import useAuth from "../../containers/Auth/useAuth";
 import React from "react";
-import { TitleH2 } from "../Global/globalStyles";
+import { TitleAddress } from "../Global/globalStyles";
 
 const Info = () => {
   const { handleLogout } = useAuth();
@@ -18,6 +18,8 @@ const Info = () => {
     navigator.clipboard.writeText(magicAddres);
     window.alert("Address copiada al portapapeles");
   };
+
+  const parsedAddress = magicAddres.slice(0, 6) + "..." + magicAddres.slice(-4);
 
   return (
     <ProfileContainer>
@@ -31,12 +33,15 @@ const Info = () => {
         style={{
           marginTop: "2rem",
           cursor: "pointer",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
         onClick={() => {
           handleCopy();
         }}
       >
-        <TitleH2>{magicAddres}</TitleH2>
+        <TitleAddress>{parsedAddress}</TitleAddress>
       </div>
       <ProfileForm>
         <InputForm
