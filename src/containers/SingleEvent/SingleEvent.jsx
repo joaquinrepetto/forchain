@@ -23,6 +23,8 @@ const SingleEvent = () => {
   const [isTicketConfirmationOpen, setIsTicketConfirmationOpen] =
     useState(false);
   const [loadingCreateEvent, setLoadingCreateEvent] = useState(false);
+  const [transactionId, setTransactionId] = useState("");
+  const [IPFSHash, setIPFSHash] = useState("");
 
   const navigate = useNavigate();
 
@@ -38,13 +40,15 @@ const SingleEvent = () => {
   const handleTicketConfirmation = async () => {
     setLoadingCreateEvent(true); //loading screen when minting token
     const publicAddress = await magicAlgorand.algorand.getWallet();
-    await createEventTicketAsset(
+    const { txID, ipfsHash } = await createEventTicketAsset(
       publicAddress,
       event?.name,
       event?.eventDescription,
       event?.flyer,
       ticketsCount
     );
+    setTransactionId(txID);
+    setIPFSHash(ipfsHash);
 
     setLoadingCreateEvent(false);
     setIsTicketConfirmationOpen(true);
@@ -115,6 +119,8 @@ const SingleEvent = () => {
         loadingCreateEvent={loadingCreateEvent}
         event={event}
         handleNavigate={handleNavigate}
+        txID={transactionId}
+        IPFSHash={IPFSHash}
       />
     </>
   );

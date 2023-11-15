@@ -60,6 +60,15 @@ export const SuccessIndication = styled.p`
   margin: 0;
 `;
 
+export const ExternalURL = styled.p`
+  font-size: 16px;
+  color: ${theme.colors.white};
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+`;
+
 export const SuccessButton = styled.div`
   background: none;
   border: none;
@@ -69,6 +78,7 @@ export const SuccessButton = styled.div`
   font-family: "Codec Pro", sans-serif;
   font-size: 28px;
   margin-top: 10px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
 `;

@@ -24,6 +24,8 @@ const TicketSelectionModal = ({
   loadingCreateEvent,
   event,
   handleNavigate,
+  txID,
+  IPFSHash,
 }) => {
   return (
     <>
@@ -37,6 +39,8 @@ const TicketSelectionModal = ({
           loadingCreateEvent={loadingCreateEvent}
           event={event}
           handleNavigate={handleNavigate}
+          txID={txID}
+          IPFSHash={IPFSHash}
         />
       )}
       <ModalWrapper>

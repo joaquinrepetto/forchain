@@ -61,12 +61,19 @@ const CompleteOrderForm = ({
   loadingCreateEvent,
   event,
   handleNavigate,
+  txID,
+  IPFSHash,
 }) => {
   return (
     <>
       <Modal handleCloseForm={handleCloseForm}>
         {isTicketConfirmationOpen ? (
-          <TicketConfirmation event={event} handleNavigate={handleNavigate} />
+          <TicketConfirmation
+            event={event}
+            handleNavigate={handleNavigate}
+            txID={txID}
+            IPFSHash={IPFSHash}
+          />
         ) : (
           <>
             {/* Modal con texto loading feo (hay que poner un spinner lindo) */}
