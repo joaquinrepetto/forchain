@@ -16,7 +16,7 @@ import QrScanModal from "./QrScanModal";
 import CreateQrs from "./CreateQrs";
 import ReadQrs from "./ReadQrs";
 
-const Comunity = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
+const Community = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
   const [data, setData] = useState(null);
   const [showCamera, setShowCamera] = useState(false);
 
@@ -55,12 +55,12 @@ const Comunity = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
       </PurpleButton>
       <MyComuinityListContainer>
         <MyComunityListTitle>Mi comunidad</MyComunityListTitle>
-        {[1, 2, 3].map((item) => {
-          return <MyComunityItem></MyComunityItem>;
+        {[1, 2, 3].map((item, index) => {
+          return <MyComunityItem key={index}></MyComunityItem>;
         })}
       </MyComuinityListContainer>
     </ComunityContainer>
   );
 };
 
-export default Comunity;
+export default Community;

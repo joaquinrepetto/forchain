@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Screen from "../../components/Screen/Screen";
 import Info from "../../components/Profile/Info";
 import MyEvents from "../../components/Profile/MyEvents";
-import Comunity from "../../components/Profile/Comunity";
+import Community from "../../components/Profile/Community";
 import useProfile from "../../containers/Profile/useProfile";
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("Información");
@@ -42,7 +42,7 @@ const Profile = () => {
       );
     } else if (activeTab === "Comunidad") {
       return (
-        <Comunity
+        <Community
           profile={profile}
           handleShowQrModalSet={handleShowQrModalSet}
           showReadQrModal={showReadQrModal}
