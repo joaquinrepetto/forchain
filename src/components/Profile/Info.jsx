@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ProfileContainer,
   ProfileImageContainer,
@@ -8,6 +7,7 @@ import {
 import InputForm from "../../components/InputForm/InputForm";
 import PurpleButton from "../Button/PurpleButton";
 import useAuth from "../../containers/Auth/useAuth";
+import React from "react";
 
 const Info = () => {
   const { handleLogout } = useAuth();
@@ -33,6 +33,7 @@ const Info = () => {
           placeholder="Email"
           isEditable={true}
         />
+
         <PurpleButton onClick={() => {}} disabled={true}>
           Guardar cambios
         </PurpleButton>

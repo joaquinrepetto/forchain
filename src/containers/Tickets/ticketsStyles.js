@@ -72,15 +72,17 @@ export const EventInfoLocation = styled.h4`
 `;
 
 export const PastEventImgContainer = styled.div`
-  width: 105px;
-  height: 105px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid 3px ${theme.colors.purpleBorder};
+  overflow: hidden;
 `;
 
 export const PastEventImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 `;
 
 export const PastEventsContainer = styled.div`
@@ -189,4 +191,61 @@ export const QRContainer = styled.div`
   align-items: center;
   flex-direction: column;
   margin-bottom: 120px;
+`;
+
+export const EventAttendedContainer = styled.div`
+  display: flex;
+  border-radius: 20px;
+  border: solid 1px ${theme.colors.border};
+  overflow: hidden;
+`;
+
+export const ImageContainer = styled.div.attrs((props) => ({
+  style: {
+    backgroundImage: `url(${props.imageurl})`,
+  },
+}))`
+  flex: 0 0 30%;
+  background-size: cover;
+  background-position: center;
+  width: auto;
+  height: auto;
+`;
+
+export const ContentContainer = styled.div`
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: ${theme.colors.white};
+`;
+
+export const Content = styled.div`
+  padding: 10px;
+`;
+
+export const EventTitle = styled.h3`
+  font-size: 18px;
+  font-family: "Codec Pro", sans-serif;
+  font-weight: bold;
+  color: ${theme.colors.darkBlue};
+  line-height: 1.2;
+  margin-bottom: 5px;
+  margin-top: 5px;
+`;
+
+export const ClaimButton = styled.button`
+  background-color: ${theme.colors.purpleBorder};
+  color: ${theme.colors.white};
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+`;
+
+export const PastEventsStyled = styled.div`
+  margin-bottom: 160px;
 `;
