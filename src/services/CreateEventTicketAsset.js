@@ -36,7 +36,7 @@ export const createEventTicketAsset = async (
       ticketsAmount: ticketsAmount,
     };
     const pinataResponse = await axios.post(
-      "http://localhost:8080/upload-json-ipfs",
+      `${process.env.REACT_APP_BASE_URL}/api/v1/ipfs/upload-json-ipfs`,
       body
     );
     const ipfsHash = pinataResponse.data.response.IpfsHash;
