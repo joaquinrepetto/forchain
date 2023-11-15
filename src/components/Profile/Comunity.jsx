@@ -5,13 +5,11 @@ import {
   ComunityTitle,
   ComunitySubtitleContainer,
   ComunitySubtitle,
-  QRContainer,
   SecondSubtitleContainer,
   SecondSubtitle,
   MyComuinityListContainer,
   MyComunityListTitle,
   MyComunityItem,
-  QRSubContainer,
 } from "../../containers/Profile/profileStyles";
 import QrScanModal from "./QrScanModal";
 import CreateQrs from "./CreateQrs";
@@ -31,11 +29,7 @@ const Comunity = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
           cargaste en tu perfil
         </ComunitySubtitle>
       </ComunitySubtitleContainer>
-      <QRContainer>
-        <QRSubContainer>
-          <CreateQrs profileInfo={profile} />
-        </QRSubContainer>
-      </QRContainer>
+      <CreateQrs profileInfo={profile} />
       <SecondSubtitleContainer>
         <SecondSubtitle>
           ¡Escanea la mayor cantidad de personas que conozcas para obtener
