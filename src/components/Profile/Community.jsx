@@ -1,5 +1,4 @@
 import PurpleButton from "../Button/PurpleButton";
-import { useState } from "react";
 import {
   ComunityContainer,
   ComunityTitleContainer,
@@ -49,6 +48,7 @@ const Community = ({
           setData={setData}
           handleShowQrModalSet={handleShowQrModalSet}
           setShowCamera={setShowCamera}
+          data={data}
         />
       ) : (
         <CreateQrs profileInfo={profile} />
