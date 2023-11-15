@@ -9,13 +9,14 @@ const useAuth = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   const { initializeWeb3 } = useWeb3();
+
   const handleConnect = async () => {
     try {
       await magic.wallet.connectWithUI();
       initializeWeb3();
       const data = await magicAlgorand.user.getMetadata();
       //Usar .env para la url
-      await axios.post("http://localhost:5500/api/v1/profile/register", {
+      await axios.post(`${process.env.REACT_APP_API}profile/register`, {
         magicId: data.publicAddress,
         email: data.email,
       });
