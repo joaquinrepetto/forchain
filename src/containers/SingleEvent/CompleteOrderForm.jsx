@@ -69,18 +69,6 @@ const CompleteOrderForm = ({
           <TicketConfirmation event={event} handleNavigate={handleNavigate} />
         ) : (
           <>
-            {/* Modal con texto loading feo (hay que poner un spinner lindo) */}
-            {loadingCreateEvent && (
-              <Overlay>
-                <Content onClick={(e) => e.stopPropagation()}>
-                  <CloseButton>&times;</CloseButton>
-                  Loading...
-                </Content>
-              </Overlay>
-            )}
-
-            {/* Fin del texto loading */}
-
             <TitleContainer>
               <TitleForm>Completar pedido</TitleForm>
               <SubtitleForm>Tiempo restante 20:00</SubtitleForm>
@@ -138,11 +126,14 @@ const CompleteOrderForm = ({
                 </TicketButtonsContainer>
               </TicketCounter>
               <Button
+                disabled={loadingCreateEvent}
                 onClick={() => {
                   handleTicketConfirmation();
                 }}
               >
-                Obtener tickets
+                {loadingCreateEvent
+                  ? "Obteniendo tickets..."
+                  : "Obtener tickets"}
               </Button>
             </ContainerForm>
           </>
