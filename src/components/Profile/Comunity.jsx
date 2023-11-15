@@ -1,4 +1,5 @@
 import PurpleButton from "../Button/PurpleButton";
+import { useState } from "react";
 import {
   ComunityContainer,
   ComunityTitleContainer,
@@ -13,12 +14,20 @@ import {
 } from "../../containers/Profile/profileStyles";
 import QrScanModal from "./QrScanModal";
 import CreateQrs from "./CreateQrs";
+import ReadQrs from "./ReadQrs";
 
 const Comunity = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
+  const [data, setData] = useState(null);
+  const [showCamera, setShowCamera] = useState(false);
+
+  const handleShowCamera = () => {
+    setShowCamera(true);
+  };
+
   return (
     <ComunityContainer>
-      {showReadQrModal && (
-        <QrScanModal handleCloseModal={handleShowQrModalSet} />
+      {data && (
+        <QrScanModal handleCloseModal={handleShowQrModalSet} data={data} />
       )}
       <ComunityTitleContainer>
         <ComunityTitle>¡Conecta con otros!</ComunityTitle>
@@ -29,14 +38,19 @@ const Comunity = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
           cargaste en tu perfil
         </ComunitySubtitle>
       </ComunitySubtitleContainer>
-      <CreateQrs profileInfo={profile} />
+      {showCamera ? (
+        <ReadQrs setData={setData} />
+      ) : (
+        <CreateQrs profileInfo={profile} />
+      )}
+
       <SecondSubtitleContainer>
         <SecondSubtitle>
           ¡Escanea la mayor cantidad de personas que conozcas para obtener
           recompensas!
         </SecondSubtitle>
       </SecondSubtitleContainer>
-      <PurpleButton onClick={() => handleShowQrModalSet()}>
+      <PurpleButton onClick={() => handleShowCamera()}>
         Escanear QR
       </PurpleButton>
       <MyComuinityListContainer>
