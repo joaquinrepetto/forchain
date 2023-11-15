@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TitleForm,
   ContainerForm,
@@ -64,6 +64,11 @@ const CompleteOrderForm = ({
   txID,
   IPFSHash,
 }) => {
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState("");
+
   return (
     <>
       <Modal handleCloseForm={handleCloseForm}>
@@ -90,24 +95,32 @@ const CompleteOrderForm = ({
                 type="text"
                 name="name"
                 id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <InputForm
                 placeholder="Apellido"
                 type="text"
                 name="lastname"
                 id="lastname"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
               <InputForm
                 placeholder="Correo electrónico"
                 type="email"
                 name="email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <InputForm
                 placeholder="Confirmar correo electrónico"
                 type="email"
                 name="confirmEmail"
                 id="confirmEmail"
+                value={confirmEmail}
+                onChange={(e) => setConfirmEmail(e.target.value)}
               />
               <TicketCounter>
                 <TicketButtonsContainer>
@@ -133,7 +146,13 @@ const CompleteOrderForm = ({
                 </TicketButtonsContainer>
               </TicketCounter>
               <Button
-                disabled={loadingCreateEvent}
+                disabled={
+                  loadingCreateEvent ||
+                  !name ||
+                  !lastName ||
+                  !email ||
+                  !confirmEmail
+                }
                 onClick={() => {
                   handleTicketConfirmation();
                 }}
