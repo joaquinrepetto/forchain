@@ -2,13 +2,13 @@ import { QrReader } from "react-qr-reader";
 import { useEffect, useState } from "react";
 import { QrReaderContainer } from "../../containers/Profile/profileStyles";
 
-const ReadQrs = ({ setData }) => {
+const ReadQrs = ({ setData, handleShowQrModalSet, setShowCamera }) => {
   const [scanResultfile, setScanResultFile] = useState("");
 
   useEffect(() => {
     if (scanResultfile.length) {
-      console.log(scanResultfile);
       setData(JSON.parse(scanResultfile));
+      handleShowQrModalSet();
     }
   }, [scanResultfile]);
 
