@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "../../theme";
 
 export const HeaderContainer = styled.div`
@@ -330,6 +330,14 @@ export const Button = styled.button`
   margin-top: 20px;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
+
+  ${(props) =>
+    props.disabled &&
+    css`
+      background-color: #ccc; /* Set a background color for the disabled state */
+      color: #666; /* Set a different text color for the disabled state */
+      cursor: not-allowed; /* Change cursor to not-allowed for the disabled state */
+    `}
 `;
 
 export const TicketButtonsContainer = styled.div`
