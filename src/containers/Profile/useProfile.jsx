@@ -9,8 +9,9 @@ const useProfile = () => {
       const { data } = await axios.get(
         `http://localhost:5500/api/v1/profile/${id}`
       );
-      console.log(data);
-      setProfile(data);
+      if (data) {
+        setProfile(data);
+      }
     } catch (error) {
       console.log(error);
     }

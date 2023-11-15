@@ -434,6 +434,9 @@ export const ComunityTitleContainer = styled.div`
 export const ComunitySubtitle = styled.h4`
   font-size: 12px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: ${theme.colors.purpleBorder};
 `;
 export const ComunitySubtitleContainer = styled.div`
   display: flex;
@@ -441,17 +444,35 @@ export const ComunitySubtitleContainer = styled.div`
 `;
 export const QRContainer = styled.div`
   display: flex;
-  trasition: 0.5s;
+  width: 308px;
+  height: 300px;
+  justify-content: center;
+  border-bottom: 1px solid ${theme.colors.border};
+  margin-top: 12px;
+`;
+export const QRSubContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: ${theme.colors.white};
+  align-items: center;
+  height: 262px;
+  width: 270px;
+  border-radius: 40px;
   :hover {
-    scale: 1.2;
-    trasition: 0.5s;
+    scale: 1.5;
   }
 `;
 
 export const SecondSubtitleContainer = styled.div`
   display: flex;
+  padding: 0px 12px;
 `;
-export const SecondSubtitle = styled.h4``;
+export const SecondSubtitle = styled.h4`
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+`;
 
 export const MyComuinityListContainer = styled.div`
   display: flex;
@@ -465,16 +486,6 @@ export const MyComunityItem = styled.div`
   height: 2rem;
   width: 100%;
   margin: 3px;
-`;
-
-export const QRSubContainer = styled.div`
-  display: flex;
-  background-color: ${theme.colors.white};
-  height: 280px;
-  width: 280px;
-
-  padding: 20px;
-  border-radius: 40px;
 `;
 
 export const QrScannModalContainer = styled.div`

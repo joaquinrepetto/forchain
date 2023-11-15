@@ -16,6 +16,7 @@ const theme = {
     inactive: "#515161",
     subtitleFile: "#7A798B",
     red: "#DD2323",
+    subtitlePurple: "#675BDA",
   },
 };
 
