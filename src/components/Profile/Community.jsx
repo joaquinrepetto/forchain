@@ -63,12 +63,12 @@ const Community = ({
       <PurpleButton onClick={() => handleShowCamera()}>
         Escanear QR
       </PurpleButton>
-      <MyComuinityListContainer>
+      {/* <MyComuinityListContainer>
         <MyComunityListTitle>Mi comunidad</MyComunityListTitle>
         {[1, 2, 3].map((item, index) => {
           return <MyComunityItem key={index}></MyComunityItem>;
         })}
-      </MyComuinityListContainer>
+      </MyComuinityListContainer> */}
     </ComunityContainer>
   );
 };
