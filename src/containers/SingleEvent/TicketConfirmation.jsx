@@ -1,7 +1,7 @@
 import React from "react";
 import SuccessMessage from "../../components/SuccessMessage/SuccessMessage";
 
-const TicketConfirmation = ({ event, handleNavigate }) => {
+const TicketConfirmation = ({ event, handleNavigate, txID, IPFSHash }) => {
   return (
     <SuccessMessage
       title="Tus entradas para"
@@ -10,6 +10,8 @@ const TicketConfirmation = ({ event, handleNavigate }) => {
       buttonText="Mis tickets"
       acknowledgments="¡Gracias!"
       onClick={handleNavigate}
+      txID={txID}
+      urlIPFS={IPFSHash}
     />
   );
 };

@@ -81,6 +81,8 @@ export const createEventTicketAsset = async (
     console.log(
       `Asset ${assetIndex} created! See the transaction at https://testnet.algoexplorer.io/tx/${assetCreateTxn.txID()}`
     );
+
+    return { txID: assetCreateTxn.txID(), ipfsHash: ipfsHash };
   } catch (error) {
     console.error(error);
     window.alert("You must have ALGO in your account.");
