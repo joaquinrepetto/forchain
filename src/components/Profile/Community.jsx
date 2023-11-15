@@ -16,18 +16,24 @@ import QrScanModal from "./QrScanModal";
 import CreateQrs from "./CreateQrs";
 import ReadQrs from "./ReadQrs";
 
-const Community = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
-  const [data, setData] = useState(null);
-  const [showCamera, setShowCamera] = useState(false);
-
+const Community = ({
+  profile,
+  showReadQrModal,
+  handleShowQrModalSet,
+  data,
+  setData,
+  showCamera,
+  setShowCamera,
+  handleCloseModal,
+}) => {
   const handleShowCamera = () => {
     setShowCamera(true);
   };
 
   return (
     <ComunityContainer>
-      {data && (
-        <QrScanModal handleCloseModal={handleShowQrModalSet} data={data} />
+      {showReadQrModal && (
+        <QrScanModal handleCloseModal={handleCloseModal} data={data} />
       )}
       <ComunityTitleContainer>
         <ComunityTitle>¡Conecta con otros!</ComunityTitle>
@@ -39,7 +45,11 @@ const Community = ({ profile, showReadQrModal, handleShowQrModalSet }) => {
         </ComunitySubtitle>
       </ComunitySubtitleContainer>
       {showCamera ? (
-        <ReadQrs setData={setData} />
+        <ReadQrs
+          setData={setData}
+          handleShowQrModalSet={handleShowQrModalSet}
+          setShowCamera={setShowCamera}
+        />
       ) : (
         <CreateQrs profileInfo={profile} />
       )}

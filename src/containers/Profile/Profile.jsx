@@ -10,6 +10,8 @@ const Profile = () => {
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [showReadQrModal, setShowReadQrModal] = useState(false);
   const { getProfile, profile } = useProfile();
+  const [data, setData] = useState(null);
+  const [showCamera, setShowCamera] = useState(false);
 
   useEffect(() => {
     getProfile();
@@ -26,6 +28,12 @@ const Profile = () => {
 
   const handleShowQrModalSet = () => {
     setShowReadQrModal(!showReadQrModal);
+    setShowCamera(false);
+  };
+
+  const handleCloseModal = () => {
+    setShowReadQrModal(false);
+    setData(null);
   };
 
   const renderContent = (activeTab) => {
@@ -46,6 +54,11 @@ const Profile = () => {
           profile={profile}
           handleShowQrModalSet={handleShowQrModalSet}
           showReadQrModal={showReadQrModal}
+          handleCloseModal={handleCloseModal}
+          data={data}
+          setData={setData}
+          showCamera={showCamera}
+          setShowCamera={setShowCamera}
         />
       );
     }

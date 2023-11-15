@@ -488,23 +488,119 @@ export const MyComunityItem = styled.div`
   margin: 3px;
 `;
 
-export const QrScannModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  background-color: rgba(39, 39, 39, 0.5);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  margin-left: -20px;
-  margin-right: -20px;
-  top: 0;
-`;
-
 export const QrReaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   max-width: 400px;
+`;
+export const QrScannModalContainer = styled.div`
+  display: flex;
+  color: black;
+  z-index: 1000;
+  background-color: rgba(39, 39, 39, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+`;
+
+export const UserScannedData = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 393px;
+  max-width: 400px;
+  z-index: 1001;
+  border-radius: 13.5px;
+  background-color: ${theme.colors.white};
+  padding: 22px;
+`;
+
+export const ScannedDataTitle = styled.h2`
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 4px;
+  font-family: "Codec Pro", sans-serif;
+`;
+
+export const ScannedDateContainer = styled.div``;
+
+export const ScannedDataSubTitle = styled.h2`
+  text-align: center;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0px 9px;
+  color: ${theme.colors.subtitlePurple};
+`;
+
+export const ScannedDate = styled.h2`
+  text-align: left;
+  font-size: 9px;
+  font-family: "Poppins", sans-serif;
+  color: ${theme.colors.gray};
+  margin-top: 28px;
+`;
+
+export const ShortItemContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+export const ShortItem = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+`;
+
+export const LargeItem = styled.div``;
+
+export const ScannedData = styled.div``;
+
+export const ButtonCotainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+`;
+
+export const CloseModalButton = styled.button`
+  height: 43px;
+  width: 280px;
+  border-radius: 18px;
+  border: none;
+  background-color: ${theme.colors.inactive};
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: ${theme.colors.white};
+  cursor: pointer;
+`;
+
+export const ItemDataContainer = styled.div`
+  padding: 4px 0px;
+  border-bottom: solid 0.5px ${theme.colors.darkBlue};
+  width: 100%;
+`;
+export const ItemDataContainerBottom = styled.div`
+  padding: 4px 0px;
+  width: 100%;
+`;
+export const SpanName = styled.span`
+  font-size: 7px;
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+  color: ${theme.colors.purpleBorder};
+`;
+export const SpanData = styled.span`
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  color: ${theme.colors.background};
+  font-weight: bold;
 `;
