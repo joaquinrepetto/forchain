@@ -9,17 +9,14 @@ import PurpleButton from "../Button/PurpleButton";
 import useAuth from "../../containers/Auth/useAuth";
 import React from "react";
 import { TitleAddress } from "../Global/globalStyles";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Info = () => {
   const { handleLogout } = useAuth();
-  const magicAddres = localStorage.getItem("user");
+  const magicAddress = localStorage.getItem("user");
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(magicAddres);
-    window.alert("Address copiada al portapapeles");
-  };
-
-  const parsedAddress = magicAddres.slice(0, 6) + "..." + magicAddres.slice(-4);
+  const parsedAddress =
+    magicAddress.slice(0, 6) + "..." + magicAddress.slice(-4);
 
   return (
     <ProfileContainer>
@@ -37,11 +34,13 @@ const Info = () => {
           justifyContent: "center",
           alignItems: "center",
         }}
-        onClick={() => {
-          handleCopy();
-        }}
       >
-        <TitleAddress>{parsedAddress}</TitleAddress>
+        <CopyToClipboard
+          text={magicAddress}
+          onCopy={() => alert("¡Copiado al portapapeles")}
+        >
+          <TitleAddress>{parsedAddress}</TitleAddress>
+        </CopyToClipboard>
       </div>
       <ProfileForm>
         <InputForm
