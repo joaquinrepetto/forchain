@@ -37,7 +37,7 @@ const Info = () => {
       >
         <CopyToClipboard
           text={magicAddress}
-          onCopy={() => alert("¡Copiado al portapapeles")}
+          onCopy={() => alert("¡Address copiada al portapapeles!")}
         >
           <TitleAddress>{parsedAddress}</TitleAddress>
         </CopyToClipboard>
