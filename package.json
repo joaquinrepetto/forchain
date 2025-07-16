@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "algosdk": "^2.7.0",
     "axios": "^1.6.2",
-    "magic-sdk": "^21.2.0",
+    "magic-sdk": "^21.5.0",
     "qrcode": "^1.5.3",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
